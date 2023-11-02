@@ -1,8 +1,10 @@
-// import { Provider } from "react-redux";
-// import Router from "./router";
-// import store from "./redux/store";
-import React, { useState } from "react";
+
 import Bukapedia from "./assets/Bukapedia.svg";
+import { Provider } from "react-redux";
+import Router from "./router";
+import store from "./redux/store";
+import React from "react";
+
 import NavBar from "./components/organisms/NavBar";
 import { SearchBar } from "./components/molecules";
 import { Button, Input } from "./components/atoms";
@@ -14,6 +16,7 @@ function App() {
     setIsOpen(!isOpen);
   };
   return (
+
     // <NavBar />
     <nav className="flex items-center justify-between w-full px-3 py-3 mx-auto max-w-8xl lg:px-4 border-b-2">
       <div className="flex items-center">
@@ -115,9 +118,13 @@ function App() {
     </nav>
   );
 }
-// {/* <Provider store={store}> */}
-//     <Router />
-//   {/* </Provider> */}
-// </>
+    <>
+      <Provider store={store}>
+        <NavBar />
+        <Router />
+      </Provider>
+    </>
+  );
+}
 
 export default App;
