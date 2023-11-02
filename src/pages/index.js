@@ -1,3 +1,3 @@
-import Testing from "./Testing";
-
-export { Testing };
+import CartPage from "./CartPage";
+import Homepage from "./Homepage";
+export { CartPage, Homepage };
