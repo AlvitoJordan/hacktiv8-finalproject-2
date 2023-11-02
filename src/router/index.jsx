@@ -1,14 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Testing } from "../pages";
+import { Route, Routes } from "react-router-dom";
+import Homepage from "../pages/Homepage";
+import CartPage from "../pages/CartPage";
 
 const Router = () => {
   return (
-    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Testing />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
-    </BrowserRouter>
   );
 };
 
