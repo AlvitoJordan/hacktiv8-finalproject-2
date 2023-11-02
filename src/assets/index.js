@@ -1,2 +1,3 @@
 import { ReactComponent as ICBukaPedia } from "./Bukapedia.svg";
-export { ICBukaPedia };
+import { ReactComponent as ILLogin } from "./IL-Login.svg";
+export { ICBukaPedia, ILLogin };
