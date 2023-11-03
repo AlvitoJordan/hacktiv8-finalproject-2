@@ -5,13 +5,14 @@ import React from "react";
 import { NavBar } from "./components/organisms"
 import { Footer} from "./components/molecules";
 
+
 function App() {
   return (
     <>
       <Provider store={store}>
         <NavBar />
         <Router />
-        <Footer copyright="© 2023 Hacktiv8 . All Rights Reserved" text="MSIB Kampus Merdeka"/>
+        <Footer copyright="© 2023 Hacktiv8 . All Rights Reserved" text="MSIB Kampus Merdeka" />
       </Provider>
     </>
   );
