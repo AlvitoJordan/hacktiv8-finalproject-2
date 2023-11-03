@@ -1,4 +1,5 @@
-import ListLink from "./ListLink";
+import NavMenu from "./NavMenu";
+import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 
-export { ListLink, SearchBar };
+export { NavMenu, Logo , SearchBar };
