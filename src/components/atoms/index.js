@@ -1,6 +1,6 @@
 import Input from "./Input";
 import Button from "./Button";
-import Icon from "./Icons";
 import Gap from "./Gap";
+import Links from "./Links";
 
-export { Input, Button, Icon, Gap };
+export { Input, Button, Links, Gap };
