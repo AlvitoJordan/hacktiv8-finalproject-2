@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <>
       <h1 className="font-bold text-[50px] text-darkgray">{title}</h1>
-      <Line />
+      <Line className="border-b border-[3px] border-lightgray w-full mb-10"/>
     </>
   );
 };

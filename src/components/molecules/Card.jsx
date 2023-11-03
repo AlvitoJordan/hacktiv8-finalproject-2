@@ -5,7 +5,15 @@ const Card = (props) => {
   const { title, img, categories, price, desc } = props;
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-box_item">
-      <Image src={img} alt={title} />
+      {img ? (
+            <Image
+              src={img}
+              alt={title}
+              className="w-full h-[250px] rounded-t-lg object-cover"
+            />
+          ) : (
+            <Image src="https://via.placeholder.com/250" alt="NoImage" className="w-full h-[250px] rounded-t-lg object-cover"></Image>
+          )}
       <div className="px-6 py-4">
         <Text
           className="font-medium text-sm text-secondary mb-2"
