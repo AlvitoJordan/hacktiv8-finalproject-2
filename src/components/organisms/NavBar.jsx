@@ -1,20 +1,18 @@
-import { Link } from "react-router-dom";
-import { ListLink, SearchBar } from "../molecules";
-import { ICBukaPedia } from "../../assets";
+import React from "react";
+import { SearchBar, Logo, NavMenu } from "../molecules";
 
 const NavBar = () => {
   return (
-    <nav className="flex bg-white justify-between items-center px-8 py-4 border-b-2">
-      <div className="flex flex-row items-center">
-        <Link to="/" className="flex flex-row items-center">
-          <ICBukaPedia />
-          <span className="text-2xl p-2 font-normal text-darkgray logo">BukaPedia</span>
-        </Link>
-        <div className="pl-10">
+    <nav className="flex items-center justify-between w-full px-3 py-3 mx-auto max-w-8xl lg:px-4 border-b-2">
+      <div className="flex items-center">
+        <Logo />
+        <div className="ml-2 md:ml-6 md:flex">
           <SearchBar />
         </div>
       </div>
-      <ListLink />
+      <div className="flex items-center">
+        <NavMenu />
+      </div>
     </nav>
   );
 };

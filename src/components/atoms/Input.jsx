@@ -1,3 +1,5 @@
+import React from "react";
+
 const Input = (props) => {
   const { typeInput, type, placeholder, onChange, value, name } = props;
   switch (typeInput) {
