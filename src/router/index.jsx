@@ -4,11 +4,14 @@ import { CartPage, Homepage, LoginPage } from "../pages";
 
 const Router = () => {
   return (
-    <Routes>
+    <div className="px-10 py-24">
+      <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/login" element={<LoginPage />} />
     </Routes>
+    </div>
+    
   );
 };
 
