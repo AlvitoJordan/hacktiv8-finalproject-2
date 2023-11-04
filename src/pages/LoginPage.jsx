@@ -9,9 +9,9 @@ const LoginPage = () => {
     const getUserFromLocal = () => {
       const userData = localStorage.getItem("userData");
       const data = JSON.parse(userData);
-      if (data?.token === "admin") {
+      if (data?.role === "admin") {
         navigate("/dashboard");
-      } else if (data?.token === "user") {
+      } else if (data?.role === "user") {
         navigate("/user");
       }
     };
