@@ -53,7 +53,7 @@ const LoginForm = () => {
         <Gap className="h-[30px]" />
         <Input placeholder="Enter Your Password" onChange={handleChange} name="password" value={formLogin.password} type="password" />
         <Gap className="h-[30px]" />
-        <Button content={`${loadLogin ? "Loading..." : "Login"} `} className="w-[70%] h-[60px] text-[32px]" />
+        <Button className="w-[70%] h-[60px] text-[32px] bg-primary text-white rounded-lg">{`${loadLogin ? "Loading..." : "Login"} `}</Button>
       </form>
     </div>
   );
