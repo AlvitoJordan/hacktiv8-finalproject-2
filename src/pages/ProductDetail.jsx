@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Image, NumberInput, Text } from "../components";
 import { Rating, ShoppingCart } from "../assets";
+import { useDispatch, useSelector } from "react-redux";
+import { getAPIAct } from "../redux/fetch/Get";
+import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
+  const { id } = useParams();
+
+  const dispatch = useDispatch();
+  const { product } = useSelector((state) => state.getAPI);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      dispatch(getAPIAct(`https://fakestoreapi.com/products/${id}`));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(product)
+  console.log(id)
   return (
     <>
       <div className="w-full min-h-[545px] items-center justify-center">
         <div className="flex justify-center">
           <div>
-            <Image src="https://via.placeholder.com/600" alt="Product Image" className="rounded-lg w-[400px] h-[400px]" />
+            <Image src={product.image} alt={product.title} className="rounded-lg w-[400px] h-[400px]" />
           </div>
           <div className="w-1/2 px-5">
-            <Text className="font-bold text-5xl text-darkgray" text="Nama Product"></Text>
+            <Text className="font-bold text-5xl text-darkgray" text="Nama Produk"></Text>
             <div className="flex flex-row gap-3 items-center text-yellow">
               <Rating />
               <Text className="text-darkgray font-semibold text-lg" text="4.8" />
