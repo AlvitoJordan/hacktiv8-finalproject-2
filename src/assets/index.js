@@ -6,5 +6,7 @@ import { ReactComponent as Hacktiv8 } from "./Hacktiv8.svg";
 import { ReactComponent as DeleteIcon } from "./Delete.svg";
 import { ReactComponent as ILProduct } from "./IL-Hero.svg";
 import { ReactComponent as BackIcon} from "./Back.svg"
+import { ReactComponent as ShoppingCart} from "./ShoppingCart.svg"
+import { ReactComponent as Rating} from "./Star.svg"
 
-export { BukaPedia, ILLogin, SearchIcon, HamburgerIcon, Hacktiv8, DeleteIcon, ILProduct, BackIcon };
+export { BukaPedia, ILLogin, SearchIcon, HamburgerIcon, Hacktiv8, DeleteIcon, ILProduct, BackIcon, ShoppingCart, Rating };
