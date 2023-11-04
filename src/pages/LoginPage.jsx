@@ -9,7 +9,11 @@ const LoginPage = () => {
     const getUserFromLocal = () => {
       const userData = localStorage.getItem("userData");
       const data = JSON.parse(userData);
-      data?.token && navigate("/dashboard");
+      if (data?.token === "admin") {
+        navigate("/dashboard");
+      } else if (data?.token === "user") {
+        navigate("/user");
+      }
     };
     getUserFromLocal();
   }, [navigate]);
