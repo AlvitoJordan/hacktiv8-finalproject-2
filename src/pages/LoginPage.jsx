@@ -9,9 +9,7 @@ const LoginPage = () => {
     const getUserFromLocal = () => {
       const userData = localStorage.getItem("userData");
       const data = JSON.parse(userData);
-      if (data.token) {
-        navigate("/");
-      }
+      data.token && navigate("/");
     };
     getUserFromLocal();
   }, [navigate]);
