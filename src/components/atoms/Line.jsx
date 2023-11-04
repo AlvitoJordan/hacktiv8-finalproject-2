@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Line = () => {
+const Line = (props) => {
+    const {className} = props;
     return(
-        <div class="border-b border-[3px] border-lightgray w-full mb-4"></div>
+        <div className={className}></div>
     )
 }
 
