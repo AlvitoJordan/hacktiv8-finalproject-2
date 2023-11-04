@@ -6,6 +6,7 @@ import Card from "./Card";
 import Header from "./Header"
 import CartContent from "./CartContent";
 import CartHeader from "./CartHeader";
+import NumberInput from "./NumberInput";
+import CartButton from "./CartButton";
 
-
-export { NavMenu, Logo , SearchBar, Footer, Card, Header, CartHeader, CartContent};
+export { NavMenu, Logo , SearchBar, Footer, Card, Header, CartHeader, CartContent, NumberInput, CartButton};
