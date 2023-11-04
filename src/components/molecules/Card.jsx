@@ -1,8 +1,16 @@
 import React from "react";
 import { Button, Text, Image } from "../atoms";
+import { useNavigate } from "react-router-dom";
 
 const Card = (props) => {
-  const { title, img, categories, price, desc } = props;
+  const { title, img, categories, price, desc, id } = props;
+
+  const navigate = useNavigate();
+
+  const handleDetail = (id) => {
+    navigate(`/detail/${id}`);
+  };
+
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-box_item h-[600px]">
       {img ? <Image src={img} alt={title} className="w-full h-[250px] rounded-t-lg object-cover" /> : <Image src="https://via.placeholder.com/250" alt="NoImage" className="w-full h-[250px] rounded-t-lg object-cover"></Image>}
@@ -14,7 +22,7 @@ const Card = (props) => {
           <Text className="font-medium text-gray text-sm" text={desc} maxLength="60" />
         </div>
         <div className="flex flex-row justify-end gap-3 mt-6 px-6 pt-4 pb-8">
-          <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-3 border-2 border-transparent rounded-md shadow ml-5">Detail</Button>
+          <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-3 border-2 border-transparent rounded-md shadow ml-5" onClick={() => handleDetail(id)} >Detail</Button>
           <Button className="bg-white hover:bg-secondary hover:border-transparent hover:text-white text-primary font-semibold py-2 px-3 border-[3px] border-primary rounded-md shadow">Add to Cart</Button>
         </div>
       </div>
