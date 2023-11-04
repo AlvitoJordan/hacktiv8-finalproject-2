@@ -20,6 +20,7 @@ const ProductDetail = () => {
       dispatch(getAPIAct(`https://fakestoreapi.com/products/${id}`));
     } catch (error) {
       console.log(error);
+
     }
   };
 
