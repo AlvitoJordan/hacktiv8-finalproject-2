@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Image, Text } from '../components';
+import { Button, Text } from '../components';
 import { EmptyCart, ShoppingCart } from '../assets';
 
 const NoItems = () => {
