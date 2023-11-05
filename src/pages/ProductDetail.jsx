@@ -30,13 +30,15 @@ const ProductDetail = () => {
     const getUser = localStorage.getItem("userData");
     const user = JSON.parse(getUser);
     const dataToCart = { ...detailProduct, quantity: inputNumber };
-    if (user?.token) {
+    if (user?.role === "user") {
       if (inputNumber > detailProduct.stock) {
         setError("Stock not enough");
       } else {
         dispatch(addToCart(dataToCart));
         navigate("/cart");
       }
+    } else if (user?.role === "admin") {
+      setError("Admin is not allowed to shop");
     } else {
       navigate("/login");
     }

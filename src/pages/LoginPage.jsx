@@ -12,7 +12,7 @@ const LoginPage = () => {
       if (data?.role === "admin") {
         navigate("/dashboard");
       } else if (data?.role === "user") {
-        navigate("/user");
+        navigate("/cart");
       }
     };
     getUserFromLocal();
