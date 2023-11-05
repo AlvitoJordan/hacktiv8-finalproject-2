@@ -2,12 +2,12 @@ import React from 'react'
 import { Image, Text } from '../atoms';
 
 const SideProduct = (props) => {
-    const {title, categories} = props
+    const {title, categories,image} = props
     return(
         <div className="flex flex-row items-center">
           <div className="w-[80px] h-[80px]">
             <Image
-              src="https://via.placeholder.com/80"
+              src={image}
               alt="noImage"
               className="w-full h-full rounded-lg object-cover"
             />

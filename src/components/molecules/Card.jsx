@@ -3,7 +3,7 @@ import { Button, Text, Image } from "../atoms";
 import { useNavigate } from "react-router-dom";
 
 const Card = (props) => {
-  const { title, img, categories, price, desc, id } = props;
+  const { title, img, categories, price, desc, id, onClick } = props;
 
   const navigate = useNavigate();
 
@@ -22,8 +22,12 @@ const Card = (props) => {
           <Text className="font-medium text-gray text-sm" text={desc} maxLength="60" />
         </div>
         <div className="flex flex-row justify-end gap-3 mt-6 px-6 pt-4 pb-8">
-          <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-3 border-2 border-transparent rounded-md shadow ml-5" onClick={() => handleDetail(id)} >Detail</Button>
-          <Button className="bg-white hover:bg-secondary hover:border-transparent hover:text-white text-primary font-semibold py-2 px-3 border-[3px] border-primary rounded-md shadow">Add to Cart</Button>
+          <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-3 border-2 border-transparent rounded-md shadow ml-5" onClick={() => handleDetail(id)}>
+            Detail
+          </Button>
+          <Button className="bg-white hover:bg-secondary hover:border-transparent hover:text-white text-primary font-semibold py-2 px-3 border-[3px] border-primary rounded-md shadow" onClick={onClick}>
+            Add to Cart
+          </Button>
         </div>
       </div>
     </div>
