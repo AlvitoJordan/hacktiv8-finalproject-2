@@ -5,7 +5,7 @@ import NumberInput from "./NumberInput";
 import SideProduct from "./SideProduct";
 
 const CartContent = (props) => {
-  const { img, title, categories, price, total, value, onDecrement, onIncrement, onChange } = props;
+  const { img, title, categories, price, total, value, onDecrement, onIncrement, onChange, deleteProduct } = props;
   return (
     <>
       <div className="grid grid-cols-[2fr_0.1fr_1fr_1fr_1fr_0.1fr] items-center justify-center border p-5 rounded-md border-lightgray my-2">
@@ -19,7 +19,7 @@ const CartContent = (props) => {
           <Text className="text-center font-medium text-lg text-darkgray" text={total} />
         </div>
         <div className="flex items-center justify-end">
-          <button>
+          <button onClick={deleteProduct}>
             <DeleteIcon />
           </button>
         </div>
