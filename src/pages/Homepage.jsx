@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAPIAct } from "../redux/fetch/Get";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../redux/cart/Cart";
+import Swal from "sweetalert2";
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -24,9 +25,15 @@ const Homepage = () => {
   const handleCart = (data) => {
     const getUser = localStorage.getItem("userData");
     const user = JSON.parse(getUser);
-    if (user?.token) {
+    if (user?.role === "user") {
       dispatch(addToCart({ ...data, quantity: 1 }));
       navigate("/cart");
+    } else if (user?.role === "admin") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Admin not allowed to buy",
+      });
     } else {
       navigate("/login");
     }
