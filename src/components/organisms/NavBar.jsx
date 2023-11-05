@@ -13,7 +13,6 @@ const NavBar = () => {
       <div className="flex items-center">
         <NavMenu />
       </div>
-      
     </nav>
   );
 };

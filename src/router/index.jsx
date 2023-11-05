@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { AdminHomePage, CartPage, Homepage, LoginPage, ProductDetail } from "../pages";
+import { AdminHomePage, CartPage, Homepage, LoginPage, ProductDetail, Rekap } from "../pages";
 import { ProtectedRoute } from "../components";
 
 const Router = () => {
@@ -12,6 +12,7 @@ const Router = () => {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<AdminHomePage />} />
+          <Route path="/rekap" element={<Rekap />} />
           <Route path="/detail/:id" element={<ProductDetail />} />
         </Routes>
       </ProtectedRoute>
