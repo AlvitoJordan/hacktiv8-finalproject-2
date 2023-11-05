@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, Text } from "../components";
 import { EmptyCart, ShoppingCart } from "../assets";
+import { useNavigate } from "react-router-dom";
 
 const NoItems = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full min-h-[545px] flex flex-col items-center justify-center">
       <EmptyCart />
@@ -14,7 +16,7 @@ const NoItems = () => {
               Click here to continue shopping"
       ></Text>
       <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow">
-        <div className="flex flex-row px-5 items-center">
+        <div className="flex flex-row px-5 items-center" onClick={() => navigate("/")}>
           <ShoppingCart />
           <Text className="ml-3" text="Continue Shopping" />
         </div>
