@@ -32,7 +32,7 @@ const LoginForm = () => {
 
       setTimeout(() => {
         const token = "akmsdnfydtaja3kjeq8d9";
-        const role = email === "admin@gmail.com" && password === "admin123" ? "admin" : "user";
+        const role = email === "admin@bukapedia.com" && password === "admin123" ? "admin" : "user";
         const userData = { token, role };
         localStorage.setItem("userData", JSON.stringify(userData));
         navigate(role === "admin" ? "/dashboard" : "/cart");
