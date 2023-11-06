@@ -10,7 +10,7 @@ import SideProduct from "../components/molecules/SideProduct";
 
 const DisabledPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const { product: products } = useSelector((state) => state.getAPI);
+  const { products } = useSelector((state) => state.getAPI);
   const activeProducts = products.filter((item) => item.status === "inactive");
   const dispatch = useDispatch();
   const perPage = typeof window !== "undefined" && window.innerWidth < 768 ? 3 : 5;

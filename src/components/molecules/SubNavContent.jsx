@@ -7,7 +7,7 @@ import ReactPaginate from "react-paginate";
 
 const SubNavContent = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const { product: products } = useSelector((state) => state.getAPI);
+  const { products } = useSelector((state) => state.getAPI);
   const dispatch = useDispatch();
   const perPage = typeof window !== "undefined" && window.innerWidth < 768 ? 3 : 5;
   const pageCount = Math.ceil(products.length / perPage);

@@ -34,17 +34,17 @@ export const changeStatusProduct = createAsyncThunk("change/status", async ({ id
 export const fetchAPISlice = createSlice({
   name: "fetchAPI",
   initialState: {
-    product: [],
+    products: [],
     detailProduct: null,
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getAPIAct.fulfilled, (state, action) => {
-        state.product = action.payload;
+        state.products = action.payload;
       })
       .addCase(changeStatusProduct.fulfilled, (state, action) => {
-        state.product = action.payload;
+        state.products = action.payload;
       })
       .addCase(getAPIActById.fulfilled, (state, action) => {
         state.detailProduct = action.payload;
