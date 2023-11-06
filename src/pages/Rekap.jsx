@@ -1,5 +1,7 @@
 import React from "react";
 import { Header } from "../components";
+import { Link } from "react-router-dom";
+import { BackIcon } from "../assets";
 
 const Rekap = () => {
   return (
@@ -84,6 +86,12 @@ const Rekap = () => {
           <div className="col-start-3 col-span-2 text-base font-semibold border-r-2 border-lightgray py-3">Total Pendapatan</div>
           <div className="text-base font-semibold border-l-2 border-lightgray py-3">$400.00</div>
         </div>
+      </div>
+      <div className="mt-10">
+        <Link to={"/dashboard"} className="bg-primary text-white px-4 py-2 rounded-lg flex w-[18%]  space-x-3 justify-center items-center">
+          <BackIcon />
+          <p>Back to dashboard</p>
+        </Link>
       </div>
     </>
   );

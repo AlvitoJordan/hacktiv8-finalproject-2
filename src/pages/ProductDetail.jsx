@@ -8,7 +8,7 @@ import { addToCart } from "../redux/cart/Cart";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [inputNumber, setinputNumber] = useState(1);
+  const [inputNumber, setInputNumber] = useState(1);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -27,18 +27,17 @@ const ProductDetail = () => {
   }, [dispatch, id]);
 
   const handleCart = () => {
-    const getUser = localStorage.getItem("userData");
-    const user = JSON.parse(getUser);
-    const dataToCart = { ...detailProduct, quantity: inputNumber };
+    const user = JSON.parse(localStorage.getItem("userData"));
+    const productToCart = { ...detailProduct, quantity: inputNumber };
     if (user?.role === "user") {
       if (inputNumber > detailProduct.stock) {
         setError("Stock not enough");
       } else {
-        dispatch(addToCart(dataToCart));
+        dispatch(addToCart(productToCart));
         navigate("/cart");
       }
     } else if (user?.role === "admin") {
-      setError("Admin is not allowed to shop");
+      setError("Admin is not allowed to buy");
     } else {
       navigate("/login");
     }
@@ -62,7 +61,7 @@ const ProductDetail = () => {
                 <Text className="text-xl font-semibold my-4 text-darkgray" text={`$ ${detailProduct.price}`} />
                 <Text className="text-base font-medium my-4 text-darkgray" text={detailProduct.description} />
                 <div className="flex flex-row gap-5 items-center mt-5 mb-2">
-                  <NumberInput value={inputNumber} onChange={(val) => setinputNumber(val)} />
+                  <NumberInput value={inputNumber} onChange={(val) => setInputNumber(val)} />
                   <Text className="text-darkgray font-semibold" text={`Stock : ${detailProduct.stock}`} />
                 </div>
                 <p className="text-red-500 mb-8">{error}</p>

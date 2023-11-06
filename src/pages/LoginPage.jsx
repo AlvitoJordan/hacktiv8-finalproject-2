@@ -6,16 +6,15 @@ import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    const getUserFromLocal = () => {
-      const userData = localStorage.getItem("userData");
-      const data = JSON.parse(userData);
-      if (data?.role === "admin") {
+    const checkUserAndRedirect = () => {
+      const user = JSON.parse(localStorage.getItem("userData"));
+      if (user?.role === "admin") {
         navigate("/dashboard");
-      } else if (data?.role === "user") {
+      } else if (user?.role === "user") {
         navigate("/cart");
       }
     };
-    getUserFromLocal();
+    checkUserAndRedirect();
   }, [navigate]);
 
   return (

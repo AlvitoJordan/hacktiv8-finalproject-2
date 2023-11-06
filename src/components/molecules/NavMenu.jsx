@@ -5,12 +5,11 @@ import { Links, Button } from "../atoms";
 const NavMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const getUserData = () => {
-    const getUser = localStorage.getItem("userData");
-    return JSON.parse(getUser);
+  const getUserDataFromLocalStorage = () => {
+    const user = localStorage.getItem("userData");
+    return user ? JSON.parse(user) : {};
   };
-  const { token, role } = getUserData() || {};
-  console.log(token);
+  const { token, role } = getUserDataFromLocalStorage();
 
   const toogleDropdown = () => {
     setIsOpen(!isOpen);

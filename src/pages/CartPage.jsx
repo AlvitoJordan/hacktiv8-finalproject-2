@@ -13,8 +13,8 @@ const CartPage = () => {
   const navigate = useNavigate();
   const [totalPrices, setTotalPrices] = useState(0);
 
-  const handleChangeQuantity = (id, val) => {
-    dispatch(changeQuantity({ id, quantity: val }));
+  const handleQuantityChange = (id, value) => {
+    dispatch(changeQuantity({ id, quantity: value }));
   };
   useEffect(() => {
     const calculateTotalPrices = () => {
@@ -41,7 +41,7 @@ const CartPage = () => {
               categories={item.category}
               title={item.title}
               value={item.quantity}
-              onChange={(val) => handleChangeQuantity(item.id, val)}
+              onChange={(val) => handleQuantityChange(item.id, val)}
               deleteProduct={() => handleDeleteProduct(item)}
             />
           ))}
