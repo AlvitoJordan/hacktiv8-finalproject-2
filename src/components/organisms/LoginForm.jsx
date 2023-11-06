@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Gap, Input } from "../atoms";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [formLogin, setFormLogin] = useState({
@@ -11,6 +12,8 @@ const LoginForm = () => {
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,7 +35,7 @@ const LoginForm = () => {
         const role = email === "admin@gmail.com" && password === "admin123" ? "admin" : "user";
         const userData = { token, role };
         localStorage.setItem("userData", JSON.stringify(userData));
-        window.location.replace(role === "admin" ? "/dashboard" : "/cart");
+        navigate(role === "admin" ? "/dashboard" : "/cart");
       }, 2000);
     } catch (error) {
       throw error;
