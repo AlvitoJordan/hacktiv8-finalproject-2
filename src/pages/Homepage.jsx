@@ -46,7 +46,7 @@ const Homepage = () => {
       <HeroSection />
       <Header title="Product" />
       <div className="flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {activeProducts.map((item) => (
             <Card key={item.id} title={item.title} img={item.image} categories={item.category} price={`$ ${item.price}`} desc={item.description} id={item.id} onClick={() => handleAddToCart(item)} />
           ))}
