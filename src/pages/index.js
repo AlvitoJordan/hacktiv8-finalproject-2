@@ -4,5 +4,7 @@ import LoginPage from "./LoginPage";
 import ProductDetail from "./ProductDetail";
 import AdminHomePage from "./AdminHomePage";
 import Rekap from "./Rekap";
-import NoItems from "./NoItems"
-export { CartPage, Homepage, LoginPage, ProductDetail, AdminHomePage, Rekap,NoItems };
+import NoItems from "./NoItems";
+import AvailabledPage from "./AvailabledPage";
+import DisabledPage from "./DisabledPage";
+export { CartPage, Homepage, LoginPage, ProductDetail, AdminHomePage, Rekap, NoItems, AvailabledPage, DisabledPage };

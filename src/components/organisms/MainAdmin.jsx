@@ -8,7 +8,7 @@ const MainAdmin = () => {
     <div className="border rounded-md border-lightgray border-x-[3px] border-t-[3px]">
       <SubNav />
       <SubNavHeader />
-      <SubNavContent value={1} />
+      <SubNavContent />
     </div>
   );
 };

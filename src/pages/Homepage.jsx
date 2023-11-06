@@ -10,21 +10,23 @@ import Swal from "sweetalert2";
 const Homepage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { product } = useSelector((state) => state.getAPI);
+  const { product: products } = useSelector((state) => state.getAPI);
+  const activeProducts = products.filter((item) => item.status === "active");
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchProducts = async () => {
       try {
-        dispatch(getAPIAct(`https://fakestoreapi.com/products`));
+        if (products.length === 0) {
+          dispatch(getAPIAct(`https://fakestoreapi.com/products`));
+        }
       } catch (error) {
         console.log(error);
       }
     };
-    fetchData();
-  }, [dispatch]);
-  const handleCart = (data) => {
-    const getUser = localStorage.getItem("userData");
-    const user = JSON.parse(getUser);
+    fetchProducts();
+  }, [dispatch, products.length]);
+  const handleAddToCart = (data) => {
+    const user = JSON.parse(localStorage.getItem("userData"));
     if (user?.role === "user") {
       dispatch(addToCart({ ...data, quantity: 1 }));
       navigate("/cart");
@@ -44,18 +46,9 @@ const Homepage = () => {
       <HeroSection />
       <Header title="Product" />
       <div className="flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-          {product.map((item) => (
-            <Card
-              key={item.id}
-              title={item.title}
-              img={item.image}
-              categories={item.category}
-              price={`$ ${item.price}`}
-              desc={item.description}
-              id={item.id}
-              onClick={() => handleCart(item)}
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6">
+          {activeProducts.map((item) => (
+            <Card key={item.id} title={item.title} img={item.image} categories={item.category} price={`$ ${item.price}`} desc={item.description} id={item.id} onClick={() => handleAddToCart(item)} />
           ))}
         </div>
       </div>

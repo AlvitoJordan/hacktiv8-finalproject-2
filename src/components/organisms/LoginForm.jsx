@@ -10,8 +10,8 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
-
   const [isLoading, setIsLoading] = useState(false);
+
   const handleLogin = (e) => {
     e.preventDefault();
     try {

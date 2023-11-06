@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const routeAdmin = ["/dashboard", "/rekap"];
+  const routeAdmin = ["/dashboard", "/rekap", "/dashboard/availabled"];
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const routeUser = ["/cart", "/detail"];
   const location = useLocation();
