@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const Homepage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { product: products } = useSelector((state) => state.getAPI);
+  const { products } = useSelector((state) => state.getAPI);
   const activeProducts = products.filter((item) => item.status === "active");
 
   useEffect(() => {
