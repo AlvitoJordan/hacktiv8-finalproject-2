@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { HamburgerIcon } from "../../assets";
 import { Links, Button } from "../atoms";
+import { useNavigate } from "react-router-dom";
 
 const NavMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const getUserDataFromLocalStorage = () => {
     const user = localStorage.getItem("userData");
@@ -16,7 +18,7 @@ const NavMenu = () => {
   };
   const handleLogout = () => {
     localStorage.removeItem("userData");
-    window.location.reload();
+    navigate("/login");
   };
 
   return (
