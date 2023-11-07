@@ -1,6 +1,6 @@
 import React from "react";
-import { Header } from "../components";
-import MainAdmin from "../components/organisms/MainAdmin";
+import { Header } from "..";
+import MainAdmin from "../organisms/MainAdmin";
 
 const AdminHomePage = () => {
   return (

@@ -2,7 +2,7 @@ import CartPage from "./CartPage";
 import Homepage from "./Homepage";
 import LoginPage from "./LoginPage";
 import ProductDetail from "./ProductDetail";
-import AdminHomePage from "./AdminHomePage";
+import AdminHomePage from "../components/templates/AdminHomePage";
 import Rekap from "./Rekap";
 import NoItems from "./NoItems";
 import AvailabledPage from "./AvailabledPage";
