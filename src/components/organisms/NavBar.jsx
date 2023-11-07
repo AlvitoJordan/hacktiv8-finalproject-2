@@ -3,14 +3,14 @@ import { SearchBar, Logo, NavMenu } from "../molecules";
 
 const NavBar = () => {
   return (
-    <nav className="fixed z-10 bg-white flex items-center justify-between w-full px-3 py-3 mx-auto max-w-8xl lg:px-4 border-b-2 border-lightgray top-0">
-      <div className="flex items-center">
+    <nav className="fixed z-10 bg-white flex items-center justify-center w-full px-5 py-3 border-b-2 border-lightgray top-0">
+      <div className="w-1/2 flex items-center justify-start">
         <Logo />
-        <div className="ml-2 md:ml-6 md:flex">
+        <div className="w-full relative mx-6">
           <SearchBar />
         </div>
       </div>
-      <div className="flex items-center">
+      <div className="w-1/2 flex items-center justify-end">
         <NavMenu />
       </div>
     </nav>

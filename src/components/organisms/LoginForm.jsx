@@ -56,8 +56,8 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col">
-      <h1 className="font-bold text-[48px] text-darkgray w-[80%]">Log in to Explore Exclusive Offers</h1>
-      <p className="text-[20px] w-[70%] text-darkgray mt-2">Join us by logging in to your account to unlock a world of curated products, tailored promotions, and a seamless shopping journey</p>
+      <h1 className="font-bold text-[48px] text-darkgray">Log in to Explore Exclusive Offers</h1>
+      <p className="text-[20px] text-darkgray mt-2">Join us by logging in to your account to unlock a world of curated products, tailored promotions, and a seamless shopping journey</p>
       <Gap className="h-[30px]" />
       <form onSubmit={handleLogin}>
         <Input placeholder="Enter Your Email" onChange={handleChange} name="email" value={formLogin.email} type="email" />
@@ -66,7 +66,7 @@ const LoginForm = () => {
         <Input placeholder="Enter Your Password" onChange={handleChange} name="password" value={formLogin.password} type="password" />
         <p className="text-red-500">{error.password}</p>
         <Gap className="h-[30px]" />
-        <Button className="w-[70%] h-[60px] text-[32px] bg-primary text-white rounded-lg flex items-center justify-center">
+        <Button className="w-[70%] h-[60px] text-2xl bg-primary text-white rounded-lg flex items-center justify-center">
           {isLoading ? <div className="w-[40px] h-[40px] rounded-full border-b-[2px] border-r-[2px]  border-secondary animate-spin" /> : <p>Login</p>}
         </Button>
       </form>

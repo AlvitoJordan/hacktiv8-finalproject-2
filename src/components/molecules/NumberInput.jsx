@@ -14,7 +14,7 @@ const NumberInput = ({ value, onChange }) => {
       <button onClick={() => handleCalculation("decrement")} className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-3 rounded-md">
         -
       </button>
-      <input type="number" value={value} onChange={onChange} className="text-center w-16 h-10 bg-white border-2 border-secondary rounded-md" />
+      <input type="number" value={value} onChange={onChange} className="text-center w-16 h-10 bg-white border-2 border-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent rounded-md" />
       <button onClick={() => handleCalculation("increment")} className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-3 rounded-md">
         +
       </button>
