@@ -1,9 +1,10 @@
 import React from "react";
 import { Button, Text, Image } from "../atoms";
 import { useNavigate } from "react-router-dom";
+import { Rating } from "../../assets";
 
 const Card = (props) => {
-  const { title, img, categories, price, desc, id, onClick} = props;
+  const { title, img, categories, price, desc, id, rating, onClick } = props;
 
   const navigate = useNavigate();
 
@@ -12,12 +13,12 @@ const Card = (props) => {
   };
 
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-box_item h-[600px]">
+    <div className="rounded-lg overflow-hidden shadow-box_item h-[530px] lg:h-[560px]">
       {img ? (
         <Image
           src={img}
           alt={title}
-          className="w-full h-[250px] rounded-t-lg object-contain"
+          className="w-full h-[150px] lg:h-[250px] rounded-t-lg object-contain"
         />
       ) : (
         <Image
@@ -26,37 +27,44 @@ const Card = (props) => {
           className="w-full h-[250px] rounded-t-lg object-cover"
         ></Image>
       )}
-      <div className="flex flex-col justify-between h-[350px]">
+      <div className="flex flex-col justify-between h-[400px] lg:h-[325px]">
         <div className="px-6 py-4">
           <Text
-            className="font-normal bg-secondary text-xs text-white py-1 px-2 mb-2 inline-block rounded-md "
+            className="font-normal bg-secondary text-[8px] lg:text-xs text-white py-1 px-2 mb-2 inline-block rounded-md "
             text={categories}
           />
           <Text
-            className="font-medium text-lg text-darkgray"
+            className="font-medium text-sm lg:text-lg text-darkgray"
             text={title}
             maxLength="35"
           />
           <Text
-            className="font-semibold text-lg text-darkgray mb-3"
+            className="font-semibold text-sm lg:text-lg text-darkgray mb-3"
             text={price}
           />
-          
+
           <Text
-            className="font-medium text-gray text-sm"
+            className="font-medium text-gray text-[10px] lg:text-sm"
             text={desc}
             maxLength="60"
           />
+          <div className="flex flex-row gap-1 mt-2">
+            <Rating />
+            <Text
+              className="text-darkgray mt-1 text-xs lg:text-sm font-semibold text-lg"
+              text={rating}
+            />
+          </div>
         </div>
-        <div className="flex flex-row justify-end gap-3 mt-6 px-6 pt-4 pb-8">
+        <div className="flex flex-col lg:flex-row justify-end gap-3 mt-2 px-6 pt-2 pb-8">
           <Button
-            className="bg-primary text-white py-2 px-3 text-base rounded-lg font-semibold hover:bg-secondary hover:text-white"
+            className="bg-primary border-primary text-white py-2 px-3 text-[8px] lg:text-base rounded-lg font-semibold hover:bg-secondary hover:text-white"
             onClick={() => handleDetail(id)}
           >
             Detail
           </Button>
           <Button
-            className="border-2 text-primary py-2 px-3 text-base rounded-lg font-semibold hover:bg-secondary hover:text-white"
+            className="border-2 text-primary py-2 px-3 text-[8px] lg:text-base rounded-lg font-semibold hover:bg-secondary hover:text-white hover:border-secondary"
             onClick={onClick}
           >
             Add to Cart

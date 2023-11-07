@@ -8,13 +8,13 @@ import { Footer} from "./components/molecules";
 
 function App() {
   return (
-    <>
+    <div>
       <Provider store={store}>
         <NavBar />
         <Router />
         <Footer copyright="© 2023 Hacktiv8 . All Rights Reserved" text="MSIB Kampus Merdeka" />
       </Provider>
-    </>
+    </div>
   );
 }
 

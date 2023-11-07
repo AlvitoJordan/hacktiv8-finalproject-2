@@ -18,11 +18,11 @@ const LoginPage = () => {
   }, [navigate]);
 
   return (
-    <div className="flex px-[95px] justify-between w-full mt-[100px] items-center">
-      <div className="w-2/4">
+    <div className="flex justify-between w-full items-center px-[170px]">
+      <div>
         <LoginForm />
       </div>
-      <div className="w-2/4">
+      <div className="flex items-center justify-center">
         <ILLogin />
       </div>
     </div>
