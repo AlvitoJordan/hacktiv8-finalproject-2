@@ -13,7 +13,7 @@ const Card = (props) => {
   };
 
   return (
-    <div className="rounded-lg overflow-hidden shadow-box_item h-[530px] lg:h-[560px]">
+    <div className="mx-2 lg:mx-0 rounded-lg overflow-hidden shadow-box_item h-[480px] lg:h-[560px]">
       {img ? (
         <Image
           src={img}
@@ -27,24 +27,24 @@ const Card = (props) => {
           className="w-full h-[250px] rounded-t-lg object-cover"
         ></Image>
       )}
-      <div className="flex flex-col justify-between h-[400px] lg:h-[325px]">
+      <div className="flex flex-col justify-between h-[330px] lg:h-[325px]">
         <div className="px-6 py-4">
           <Text
-            className="font-normal bg-secondary text-[8px] lg:text-xs text-white py-1 px-2 mb-2 inline-block rounded-md "
+            className="font-normal bg-secondary text-xs lg:text-xs text-white py-1 px-2 mb-2 inline-block rounded-md "
             text={categories}
           />
           <Text
-            className="font-medium text-sm lg:text-lg text-darkgray"
+            className="font-semibold text-lg text-darkgray"
             text={title}
-            maxLength="35"
+            maxLength="25"
           />
           <Text
-            className="font-semibold text-sm lg:text-lg text-darkgray mb-3"
+            className="font-semibold text-md lg:text-lg text-darkgray mb-3"
             text={price}
           />
 
           <Text
-            className="font-medium text-gray text-[10px] lg:text-sm"
+            className="font-medium text-gray text-sm"
             text={desc}
             maxLength="60"
           />
@@ -58,13 +58,13 @@ const Card = (props) => {
         </div>
         <div className="flex flex-col lg:flex-row justify-end gap-3 mt-2 px-6 pt-2 pb-8">
           <Button
-            className="bg-primary border-primary text-white py-2 px-3 text-[8px] lg:text-base rounded-lg font-semibold hover:bg-secondary hover:text-white"
+            className="bg-primary border-primary text-white py-2 px-3 text-sm lg:text-base rounded-lg font-semibold hover:bg-secondary hover:text-white"
             onClick={() => handleDetail(id)}
           >
             Detail
           </Button>
           <Button
-            className="border-2 text-primary py-2 px-3 text-[8px] lg:text-base rounded-lg font-semibold hover:bg-secondary hover:text-white hover:border-secondary"
+            className="border-2 text-primary py-2 px-3 text-sm lg:text-base rounded-lg font-semibold hover:bg-secondary hover:text-white hover:border-secondary"
             onClick={onClick}
           >
             Add to Cart

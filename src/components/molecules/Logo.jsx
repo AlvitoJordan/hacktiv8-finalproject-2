@@ -7,7 +7,7 @@ const Logo = () => {
     <div className="flex items-center justify-between">
       <Links to="/" className="flex">
         <BukaPedia className="h-6" />
-        <span className="mx-2 md:flex self-center text-2xl font-semibold logo">
+        <span className="mx-2 hidden lg:flex self-center text-2xl font-semibold logo">
           Bukapedia
         </span>
       </Links>

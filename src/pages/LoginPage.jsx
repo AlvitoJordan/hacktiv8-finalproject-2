@@ -18,7 +18,7 @@ const LoginPage = () => {
   }, [navigate]);
 
   return (
-    <div className="flex justify-between w-full items-center px-[170px]">
+    <div className="flex justify-between w-full items-center px-[90px]">
       <div>
         <LoginForm />
       </div>
