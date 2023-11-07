@@ -10,18 +10,7 @@ import { ReactComponent as ShoppingCart } from "./ShoppingCart.svg";
 import { ReactComponent as Rating } from "./Star.svg";
 import { ReactComponent as EmptyCart } from "./EmptyCart.svg";
 import { ReactComponent as ICWarning } from "./Warning.svg";
+import { ReactComponent as ICEmail } from "./email.svg";
+import { ReactComponent as ICPassword } from "./password.svg";
 
-export {
-  BukaPedia,
-  ILLogin,
-  SearchIcon,
-  HamburgerIcon,
-  Hacktiv8,
-  DeleteIcon,
-  ILProduct,
-  BackIcon,
-  ShoppingCart,
-  Rating,
-  EmptyCart,
-  ICWarning,
-};
+export { BukaPedia, ILLogin, SearchIcon, HamburgerIcon, Hacktiv8, DeleteIcon, ILProduct, BackIcon, ShoppingCart, Rating, EmptyCart, ICWarning, ICEmail, ICPassword };

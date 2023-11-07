@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Gap, Input } from "../atoms";
 import { useNavigate } from "react-router-dom";
+import { ICEmail, ICPassword } from "../../assets";
 
 const LoginForm = () => {
   const [formLogin, setFormLogin] = useState({
@@ -56,14 +57,14 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col py-24">
-      <h1 className="font-bold text-[48px] w-[70%] text-darkgray">Log in to Explore Exclusive Offers</h1>
+      <h1 className="font-bold text-[48px] w-[80%] text-darkgray">Log in to Explore Exclusive Offers</h1>
       <p className="text-[20px] w-[60%] text-darkgray mt-2">Join us by logging in to your account to unlock a world of curated products, tailored promotions, and a seamless shopping journey</p>
       <Gap className="h-[30px]" />
       <form onSubmit={handleLogin}>
-        <Input placeholder="Enter Your Email" onChange={handleChange} name="email" value={formLogin.email} type="email" />
+        <Input placeholder="Enter Your Email" onChange={handleChange} name="email" value={formLogin.email} type="email" typeInput="InputWithIcon" icon={<ICEmail className="w-[30px] h-[30px]" />} />
         <p className="text-red-500">{error.email}</p>
         <Gap className="h-[30px]" />
-        <Input placeholder="Enter Your Password" onChange={handleChange} name="password" value={formLogin.password} type="password" />
+        <Input placeholder="Enter Your Password" onChange={handleChange} name="password" value={formLogin.password} type="password" typeInput="InputWithIcon" icon={<ICPassword className="w-[30px] h-[30px]" />} />
         <p className="text-red-500">{error.password}</p>
         <Gap className="h-[30px]" />
         <Button className="w-[60%] h-[60px] text-2xl bg-primary text-white rounded-lg flex items-center justify-center">

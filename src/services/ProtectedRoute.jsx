@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
-  const param = useParams();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const routeAdmin = ["/rekap", "/availabled", "/disabled"];
   // eslint-disable-next-line react-hooks/exhaustive-deps
