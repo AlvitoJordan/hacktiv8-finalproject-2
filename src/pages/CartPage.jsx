@@ -26,6 +26,15 @@ const CartPage = () => {
   const handleDeleteProduct = (data) => {
     dispatch(removeProduct(data));
   };
+
+
+  function quantityFull(val) {
+    if (val.quantity <= val.stock) {
+      return false
+    } else {
+      return true
+    }
+  }
   return (
     <div className="mx-4">
       <Header title="Shopping Cart" />
@@ -43,6 +52,7 @@ const CartPage = () => {
               value={item.quantity}
               onChange={(val) => handleQuantityChange(item.id, val)}
               deleteProduct={() => handleDeleteProduct(item)}
+              active={quantityFull(item)}
             />
           ))}
         </>
@@ -61,7 +71,7 @@ const CartPage = () => {
                 <Text className="ml-3" text="Continue Shopping" />
               </div>
             </Button>
-            <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow">Checkout</Button>
+            <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow" >Checkout</Button>
           </div>
         </>
       ) : (
