@@ -9,7 +9,19 @@ import { ReactComponent as BackIcon } from "./Back.svg";
 import { ReactComponent as ShoppingCart } from "./ShoppingCart.svg";
 import { ReactComponent as Rating } from "./Star.svg";
 import { ReactComponent as EmptyCart } from "./EmptyCart.svg";
-import { ReactComponent as Warning} from "./Warning.svg"
+import { ReactComponent as ICWarning } from "./Warning.svg";
 
-
-export { BukaPedia, ILLogin, SearchIcon, HamburgerIcon, Hacktiv8, DeleteIcon, ILProduct, BackIcon, ShoppingCart, Rating, EmptyCart,Warning };
+export {
+  BukaPedia,
+  ILLogin,
+  SearchIcon,
+  HamburgerIcon,
+  Hacktiv8,
+  DeleteIcon,
+  ILProduct,
+  BackIcon,
+  ShoppingCart,
+  Rating,
+  EmptyCart,
+  ICWarning,
+};

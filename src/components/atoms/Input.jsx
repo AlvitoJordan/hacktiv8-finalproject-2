@@ -10,7 +10,7 @@ const Input = (props) => {
       return (
         <input
           type={type}
-          className="border-2 border-secondary bg-white h-[60px] w-[70%]  px-5 pr-5 rounded-md text-sm focus:outline-none placeholder:text-secondary"
+          className="border-2 border-secondary bg-white h-[60px] w-[60%]  px-5 pr-5 rounded-md text-sm focus:outline-none placeholder:text-secondary"
           placeholder={placeholder}
           onChange={onChange}
           value={value}

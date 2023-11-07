@@ -8,5 +8,6 @@ import CartContent from "./CartContent";
 import CartHeader from "./CartHeader";
 import NumberInput from "./NumberInput";
 import CartButton from "./CartButton";
+import Warning from "./Warning";
 
-export { NavMenu, Logo , SearchBar, Footer, Card, Header, CartHeader, CartContent, NumberInput, CartButton};
+export { NavMenu, Logo , SearchBar, Footer, Card, Header, CartHeader, CartContent, NumberInput, CartButton, Warning};
