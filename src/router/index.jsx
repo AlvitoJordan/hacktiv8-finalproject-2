@@ -1,14 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import {
-  AvailabledPage,
-  CartPage,
-  DisabledPage,
-  Homepage,
-  LoginPage,
-  ProductDetail,
-  Rekap,
-} from "../pages";
+import { AvailabledPage, CartPage, DisabledPage, Homepage, LoginPage, ProductDetail, Rekap } from "../pages";
 import { ProtectedRoute } from "../services";
 
 const Router = () => {

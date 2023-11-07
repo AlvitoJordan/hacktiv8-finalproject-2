@@ -50,7 +50,9 @@ const SubNavContent = () => {
           </div>
 
           <div className="flex justify-center">
-            <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow">Update</Button>
+            <Button TypeButton="ButtonPrimary" className="font-semibold text-white">
+              Update
+            </Button>
           </div>
         </div>
       ))}
