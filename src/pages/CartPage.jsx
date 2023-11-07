@@ -3,12 +3,14 @@ import { CartContent, CartHeader, Header } from "../components/molecules";
 import { Button, Text } from "../components";
 import { BackIcon } from "../assets";
 import { useDispatch, useSelector } from "react-redux";
-import { changeQuantity, removeProduct } from "../redux/cart/Cart";
+import { addToCheckout, changeQuantity, removeProduct } from "../redux/cart/Cart";
 import NoItems from "./NoItems";
 import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const { cart } = useSelector((state) => state.addCart);
+  const { checkout } = useSelector((state) => state.addCart);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [totalPrices, setTotalPrices] = useState(0);
@@ -26,6 +28,17 @@ const CartPage = () => {
   const handleDeleteProduct = (data) => {
     dispatch(removeProduct(data));
   };
+
+  const handleCheckout = (data) => {
+    if (data.quantity > data.stock) {
+      navigate("/cart");
+    } else {
+      dispatch(addToCheckout({ data }));
+      navigate("/cart");
+    }
+  };
+
+  console.log(checkout)
 
 
   function quantityFull(val) {
@@ -71,7 +84,7 @@ const CartPage = () => {
                 <Text className="ml-3" text="Continue Shopping" />
               </div>
             </Button>
-            <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow" >Checkout</Button>
+            <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow" onClick={() => handleCheckout(cart)}>Checkout</Button>
           </div>
         </>
       ) : (
