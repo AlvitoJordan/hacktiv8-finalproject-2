@@ -49,6 +49,7 @@ const AvailabledPage = () => {
             </div>
             <div className="flex justify-center">
               <input type="number" value={item.stock} onChange={handleInputChange} className="text-center w-16 h-10 bg-white border-2 border-secondary rounded-md" />
+
             </div>
 
             <div className="flex justify-center">
