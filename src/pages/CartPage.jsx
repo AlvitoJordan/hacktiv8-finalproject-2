@@ -3,12 +3,14 @@ import { CartContent, CartHeader, Header } from "../components/molecules";
 import { Button, Text } from "../components";
 import { BackIcon } from "../assets";
 import { useDispatch, useSelector } from "react-redux";
-import { changeQuantity, removeProduct } from "../redux/cart/Cart";
+import { addToCheckout, changeQuantity, removeProduct } from "../redux/cart/Cart";
 import NoItems from "./NoItems";
 import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const { cart } = useSelector((state) => state.addCart);
+  const { checkout } = useSelector((state) => state.addCart);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [totalPrices, setTotalPrices] = useState(0);
@@ -34,6 +36,17 @@ const CartPage = () => {
       return true;
     }
   }
+
+  const handleCheckout = (data) => {
+    if (data.quantity > data.stock) {
+      navigate("/cart");
+    } else {
+      dispatch(addToCheckout({ ...data }));
+      navigate("/cart");
+    }
+  };
+  console.log(checkout)
+
   return (
     <div className="mx-4">
       <Header title="Shopping Cart" />
@@ -72,7 +85,8 @@ const CartPage = () => {
             >
               Continue Shopping
             </Button>
-            <Button TypeButton="ButtonPrimary" className="text-white font-semibold">
+
+            <Button TypeButton="ButtonPrimary" className="text-white font-semibold" onClick={() => handleCheckout(cart)} >
               Checkout
             </Button>
           </div>

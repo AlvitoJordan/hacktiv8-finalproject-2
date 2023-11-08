@@ -3,6 +3,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const addToCart = createAsyncThunk("cart/addToCart", async (product) => {
   return product;
 });
+export const addToCheckout = createAsyncThunk("cart/addCheckout", async (product) => {
+  return product;
+});
 export const changeQuantity = createAsyncThunk("change/addToCart", async ({ id, quantity }) => {
   return { id, quantity };
 });
@@ -15,11 +18,15 @@ const AddCartSlice = createSlice({
   name: "addCart",
   initialState: {
     cart: [],
+    checkout: [],
   },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(addToCart.fulfilled, (state, action) => {
       state.cart.push(action.payload);
+    });
+    builder.addCase(addToCheckout.fulfilled, (state, action) => {
+      state.checkout.push(action.payload);
     });
     builder.addCase(changeQuantity.fulfilled, (state, action) => {
       const { id, quantity } = action.payload;
