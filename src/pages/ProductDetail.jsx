@@ -59,7 +59,7 @@ const ProductDetail = () => {
                   <Text className="text-darkgray font-semibold text-lg mt-1" text={detailProduct.rating?.rate} />
                 </div>
                 <Text className="text-2xl font-semibold my-4 text-darkgray" text={`$ ${detailProduct.price}`} />
-                <Text className="text-base font-medium my-4 text-gray" text={detailProduct.description} />
+                <Text className="text-base font-medium my-4 text-grayCS" text={detailProduct.description} />
                 <div className="flex flex-row gap-5 items-center mt-5 mb-2">
                   <NumberInput value={inputNumber} onChange={(val) => setInputNumber(val)} />
                   <Text className="text-darkgray font-semibold" text={`Stock : ${detailProduct.stock}`} />

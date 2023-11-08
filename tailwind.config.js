@@ -10,7 +10,7 @@ module.exports = {
         beige: '#ECE5D2',
         lightgray: '#C2C2C2',
         darkgray : '#444444',
-        gray : '#6E6E6E',
+        grayCS : '#6E6E6E',
         tablecolor : '#F4F4F4'
       },
       boxShadow: {
