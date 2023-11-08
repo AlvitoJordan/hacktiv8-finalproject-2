@@ -29,7 +29,6 @@ const CartPage = () => {
     dispatch(removeProduct(data));
   };
 
-
   function quantityFull(val) {
     if (val.quantity <= val.stock) {
       return false;
@@ -86,6 +85,7 @@ const CartPage = () => {
             >
               Continue Shopping
             </Button>
+
             <Button TypeButton="ButtonPrimary" className="text-white font-semibold" onClick={() => handleCheckout(cart)} >
               Checkout
             </Button>
