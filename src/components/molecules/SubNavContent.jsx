@@ -4,6 +4,7 @@ import SideProduct from "./SideProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { changeStatusProduct, getAPIAct } from "../../redux/fetch/Get";
 import ReactPaginate from "react-paginate";
+import Skeleton from "./Skeleton";
 
 const SubNavContent = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -32,30 +33,36 @@ const SubNavContent = () => {
 
   return (
     <>
-      {currentPageData.map((item) => (
-        <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center justify-center p-5 border-lightgray border-b-2" key={item.id}>
-          <SideProduct image={item.image} title={item.title} categories={item.category} />
-          <div className="flex justify-center items-center">
-            <label className="relative inline-flex items-center cursor-pointer select-none">
-              <input type="checkbox" className="peer sr-only" checked={item.status === "active"} onChange={() => handleCheckboxChange(item.id)} />
-              <div className={`block h-8 w-14 rounded-full ${item.status === "active" ? "bg-primary" : "bg-lightgray"}`}></div>
-              <div className={`absolute w-6 h-6 transition rounded-full ${item.status === "active" ? "bg-secondary" : "bg-darkgray"} ${item.status === "active" ? "translate-x-full" : ""} left-1 top-1`}></div>
-            </label>
-          </div>
-          <div>
-            <Text className="text-center font-medium text-lg text-darkgray" text={`$ ${item.price}`} />
-          </div>
-          <div className="flex justify-center">
-            <input type="number" value={item.stock} onChange={handleInputChange} className="text-center w-16 h-10 bg-white border-2 border-secondary rounded-md" />
-          </div>
+      {currentPageData.length > 0 ? (
+        <>
+          {currentPageData.map((item) => (
+            <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center justify-center p-5 border-lightgray border-b-2" key={item.id}>
+              <SideProduct image={item.image} title={item.title} categories={item.category} />
+              <div className="flex justify-center items-center">
+                <label className="relative inline-flex items-center cursor-pointer select-none">
+                  <input type="checkbox" className="peer sr-only" checked={item.status === "active"} onChange={() => handleCheckboxChange(item.id)} />
+                  <div className={`block h-8 w-14 rounded-full ${item.status === "active" ? "bg-primary" : "bg-lightgray"}`}></div>
+                  <div className={`absolute w-6 h-6 transition rounded-full ${item.status === "active" ? "bg-secondary" : "bg-darkgray"} ${item.status === "active" ? "translate-x-full" : ""} left-1 top-1`}></div>
+                </label>
+              </div>
+              <div>
+                <Text className="text-center font-medium text-lg text-darkgray" text={`$ ${item.price}`} />
+              </div>
+              <div className="flex justify-center">
+                <input type="number" value={item.stock} onChange={handleInputChange} className="text-center w-16 h-10 bg-white border-2 border-secondary rounded-md" />
+              </div>
 
-          <div className="flex justify-center">
-            <Button TypeButton="ButtonPrimary" className="font-semibold text-white">
-              Update
-            </Button>
-          </div>
-        </div>
-      ))}
+              <div className="flex justify-center">
+                <Button TypeButton="ButtonPrimary" className="font-semibold text-white">
+                  Update
+                </Button>
+              </div>
+            </div>
+          ))}
+        </>
+      ) : (
+        <Skeleton type="Products" />
+      )}
       <ReactPaginate
         previousLabel={"<"}
         nextLabel={">"}

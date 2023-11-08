@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Text, Image } from "../atoms";
 import { useNavigate } from "react-router-dom";
-import { Rating, ShoppingCart } from "../../assets";
+import { ShoppingCart } from "../../assets";
 
 const Card = (props) => {
-  const { title, img, categories, price, desc, id, rating, onClick } = props;
+  const { title, img, categories, price, desc, id, rating, onClick, IconRate } = props;
 
   const navigate = useNavigate();
 
@@ -24,10 +24,9 @@ const Card = (props) => {
           <Text className="font-normal bg-secondary text-xs lg:text-xs text-white py-1 px-2 mb-2 inline-block rounded-md " text={categories} />
           <Text className="font-semibold text-lg text-darkgray" text={title} maxLength="25" />
           <Text className="font-semibold text-md lg:text-lg text-darkgray mb-3" text={price} />
-
-          <Text className="font-medium text-gray text-sm" text={desc} maxLength="60" />
-          <div className="flex flex-row gap-1 mt-2">
-            <Rating />
+          <Text className="font-medium text-grayCS text-sm" text={desc} maxLength="60" />
+          <div className="flex flex-row space-x-3 mt-2">
+            <div className="flex items-center space-x-1">{IconRate}</div>
             <Text className="text-darkgray mt-1  lg:text-sm font-semibold text-lg" text={rating} />
           </div>
         </div>
