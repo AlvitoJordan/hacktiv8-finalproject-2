@@ -38,18 +38,10 @@ const CartPage = () => {
   }
 
   const handleCheckout = (data) => {
-    dispatch(addToCheckout({ data }));
+    dispatch(addToCheckout(data));
 
   };
-
   console.log(checkout)
-
-  console.log("data checkout")
-  checkout.map((product) => {
-    product.data.map((p) => {
-      console.log(p.title)
-    })
-  })
 
   return (
     <div className="mx-4">

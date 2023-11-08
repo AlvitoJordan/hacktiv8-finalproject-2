@@ -26,7 +26,7 @@ const AddCartSlice = createSlice({
       state.cart.push(action.payload);
     });
     builder.addCase(addToCheckout.fulfilled, (state, action) => {
-      state.checkout.push(action.payload);
+      state.checkout = action.payload;
     });
     builder.addCase(changeQuantity.fulfilled, (state, action) => {
       const { id, quantity } = action.payload;
