@@ -1,5 +1,11 @@
 import { useEffect } from "react";
-import { Header, Card, Skeleton, AdminHomePage, HeroSection } from "../components/";
+import {
+  Header,
+  Card,
+  Skeleton,
+  AdminHomePage,
+  HeroSection,
+} from "../components/";
 import { useDispatch, useSelector } from "react-redux";
 import { getAPIAct } from "../redux/fetch/Get";
 import { useNavigate } from "react-router-dom";
