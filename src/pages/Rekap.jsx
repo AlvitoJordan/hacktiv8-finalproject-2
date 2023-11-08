@@ -1,6 +1,5 @@
 import React from "react";
-import { Header } from "../components";
-import { Link } from "react-router-dom";
+import { Button, Header } from "../components";
 import { BackIcon } from "../assets";
 
 const Rekap = () => {
@@ -88,10 +87,9 @@ const Rekap = () => {
         </div>
       </div>
       <div className="mt-10">
-        <Link to={"/dashboard"} className="bg-primary text-white px-4 py-2 rounded-lg flex w-[18%]  space-x-3 justify-center items-center">
-          <BackIcon />
-          <p>Back to dashboard</p>
-        </Link>
+        <Button to="/" TypeButton="ButtonLinkWithIcon" icon={<BackIcon className="h-[20px] w-[20px]" />}>
+          Back to dashboard
+        </Button>
       </div>
     </>
   );

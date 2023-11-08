@@ -29,25 +29,25 @@ const CartPage = () => {
     dispatch(removeProduct(data));
   };
 
+
+  function quantityFull(val) {
+    if (val.quantity <= val.stock) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   const handleCheckout = (data) => {
     if (data.quantity > data.stock) {
       navigate("/cart");
     } else {
-      dispatch(addToCheckout({ data }));
+      dispatch(addToCheckout({ ...data }));
       navigate("/cart");
     }
   };
-
   console.log(checkout)
 
-
-  function quantityFull(val) {
-    if (val.quantity <= val.stock) {
-      return false
-    } else {
-      return true
-    }
-  }
   return (
     <div className="mx-4">
       <Header title="Shopping Cart" />
@@ -73,18 +73,22 @@ const CartPage = () => {
 
       {cart.length > 0 ? (
         <>
-          <div className="flex gap-20 justify-end items-center my-10">
-            <Text className="text-darkgray font-semibold text-3xl" text="Total" />
-            <Text className="text-darkgray font-semibold text-3xl" text={`$ ${totalPrices}`} />
+          <div className="flex space-x-4 justify-end items-center my-10 ">
+            <Text className="font-semibold text-3xl" text="Total =" />
+            <Text type="dolar" className="font-semibold text-3xl" text={`$ ${totalPrices}`} maxLength="8" />
           </div>
           <div className="flex flex-row justify-between mt-6 pt-4 pb-4">
-            <Button className="bg-white hover:bg-secondary hover:border-transparent hover:text-white text-primary font-semibold py-2 px-3 border-[3px] border-primary rounded-md shadow" onClick={() => navigate("/")}>
-              <div className="flex flex-row px-5">
-                <BackIcon className="hover:text-white" />
-                <Text className="ml-3" text="Continue Shopping" />
-              </div>
+            <Button
+              TypeButton="ButtonPrimaryWithIcon"
+              className="bg-white hover:bg-secondary hover:border-transparent hover:text-white text-primary font-semibold py-2 px-3 border-[3px] border-primary rounded-md shadow"
+              onClick={() => navigate("/")}
+              icon={<BackIcon />}
+            >
+              Continue Shopping
             </Button>
-            <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow" onClick={() => handleCheckout(cart)}>Checkout</Button>
+            <Button TypeButton="ButtonPrimary" className="text-white font-semibold" onClick={() => handleCheckout(cart)} >
+              Checkout
+            </Button>
           </div>
         </>
       ) : (
