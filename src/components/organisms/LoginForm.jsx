@@ -31,17 +31,34 @@ const LoginForm = () => {
         return;
       }
 
-      setTimeout(() => {
-        const token = "akmsdnfydtaja3kjeq8d9";
-        const role = email === "admin@bukapedia.com" && password === "admin123" ? "admin" : "user";
-        const userData = { token, role };
-        localStorage.setItem("userData", JSON.stringify(userData));
-        navigate(role === "admin" ? "/" : "/cart");
-      }, 2000);
+      if (email === "user@gmail.com" && password === "user123") {
+        setTimeout(() => {
+          const token = "akmsdnfydtaja3kjeq8d9";
+          const role = "user";
+          const userData = { token, role };
+          localStorage.setItem("userData", JSON.stringify(userData));
+          navigate("/cart");
+        }, 2000);
+      } else if (email === "admin@bukapedia.com" && password === "admin123") {
+        setTimeout(() => {
+          const token = "akmsdnfydtaja3kjeq8d9";
+          const role = "admin";
+          const userData = { token, role };
+          localStorage.setItem("userData", JSON.stringify(userData));
+          navigate("/");
+        }, 2000);
+      } else {
+        setError({
+          email: "Invalid email or password",
+          password: "Invalid email or password",
+        });
+        setIsLoading(false);
+      }
     } catch (error) {
       throw error;
     }
   };
+
   const handleChange = (e) => {
     try {
       const { name, value } = e.target;

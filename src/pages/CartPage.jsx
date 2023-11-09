@@ -8,7 +8,7 @@ import NoItems from "./NoItems";
 import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
-  const { cart } = useSelector((state) => state.addCart)
+  const { cart } = useSelector((state) => state.addCart);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const CartPage = () => {
   }
 
   const handleCheckout = (data) => {
-    dispatch(addToCheckout({ data }));
+    dispatch(addToCheckout(data));
   };
 
   return (
