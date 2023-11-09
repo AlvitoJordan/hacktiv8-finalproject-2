@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const { cart } = useSelector((state) => state.addCart);
-  const { checkout } = useSelector((state) => state.addCart);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,9 +38,7 @@ const CartPage = () => {
 
   const handleCheckout = (data) => {
     dispatch(addToCheckout(data));
-
   };
-  console.log(checkout)
 
   return (
     <div className="mx-4">
@@ -82,7 +79,7 @@ const CartPage = () => {
               Continue Shopping
             </Button>
 
-            <Button TypeButton="ButtonPrimary" className="text-white font-semibold" onClick={() => handleCheckout(cart)} >
+            <Button TypeButton="ButtonPrimary" className="text-white font-semibold" onClick={() => handleCheckout(cart)}>
               Checkout
             </Button>
           </div>
