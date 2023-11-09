@@ -3,6 +3,15 @@ import React from "react";
 const Text = (props) => {
   const { className, text, maxLength, type } = props;
   switch (type) {
+    case "header":
+      return (
+        <>
+          <h1 className="font-bold text-[30px] lg:text-[50px] text-darkgray">
+            {text}
+          </h1>
+          <div className="border-b border-[3px] border-lightgray w-full mb-10" />
+        </>
+      );
     case "card-title":
       return (
         <div className="font-semibold text-lg text-darkgray line-clamp-1">
@@ -35,10 +44,7 @@ const Text = (props) => {
 
       return <div className={className}>{shortenedDolar}</div>;
     default:
-      const shortenedText =
-        text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
-
-      return <div className={className}>{shortenedText}</div>;
+      return <div className={className}>{text}</div>;
   }
 };
 

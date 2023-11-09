@@ -34,10 +34,19 @@ const Card = (props) => {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-end gap-3 mt-5 px-6 pb-6">
-          <Button TypeButton="ButtonPrimary" className="font-semibold text-white" onClick={() => handleDetail(id)}>
+          <Button
+            TypeButton="ButtonPrimary"
+            className="font-semibold text-white"
+            onClick={() => handleDetail(id)}
+          >
             Detail
           </Button>
-          <Button icon={<ShoppingCart />} TypeButton="ButtonPrimaryWithIcon" className="bg-white border-primary border-2 text-primary font-semibold hover:bg-secondary hover:text-white hover:border-transparent" onClick={onClick}>
+          <Button
+            icon={<ShoppingCart />}
+            TypeButton="ButtonPrimaryWithIcon"
+            className="bg-white border-primary border-2 text-primary font-semibold hover:bg-secondary hover:text-white hover:border-transparent"
+            onClick={onClick}
+          >
             Add to Cart
           </Button>
         </div>
