@@ -18,30 +18,39 @@ const LoginForm = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      const { email, password } = formLogin;
-      setIsLoading(true);
+    const { email, password } = formLogin;
+    setIsLoading(true);
 
-      if (email.length < 5 || password.length < 5) {
-        setError({
-          email: email.length < 5 ? "Email must be at least 5 characters" : "",
-          password: password.length < 5 ? "Password must be at least 5 characters" : "",
-        });
-        setIsLoading(false);
-        return;
-      }
+    if (email.length < 5 || password.length < 5) {
+      setError({
+        email: email.length < 5 ? "Email must be at least 5 characters" : "",
+        password: password.length < 5 ? "Password must be at least 5 characters" : "",
+      });
+      setIsLoading(false);
+      return;
+    }
 
-      setTimeout(() => {
-        const token = "akmsdnfydtaja3kjeq8d9";
-        const role = email === "admin@bukapedia.com" && password === "admin123" ? "admin" : "user";
-        const userData = { token, role };
-        localStorage.setItem("userData", JSON.stringify(userData));
-        navigate(role === "admin" ? "/" : "/cart");
-      }, 2000);
-    } catch (error) {
-      throw error;
+    if (email === "user@gmail.com" && password === "user123") {
+      loginUser("user");
+    } else if (email === "admin@bukapedia.com" && password === "admin123") {
+      loginUser("admin");
+    } else {
+      setError({
+        email: "Invalid email or password",
+        password: "Invalid email or password",
+      });
+      setIsLoading(false);
     }
   };
+  const loginUser = (role) => {
+    setTimeout(() => {
+      const token = "akmsdnfydtaja3kjeq8d9";
+      const userData = { token, role };
+      localStorage.setItem("userData", JSON.stringify(userData));
+      navigate(role === "admin" ? "/" : "/cart");
+    }, 2000);
+  };
+
   const handleChange = (e) => {
     try {
       const { name, value } = e.target;
