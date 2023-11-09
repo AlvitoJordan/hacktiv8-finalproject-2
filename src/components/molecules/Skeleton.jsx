@@ -7,7 +7,7 @@ const Skeleton = (props) => {
     case "Card":
       return (
         <div className="lg:mx-0 overflow-hidden shadow-box_item rounded-lg ">
-          <div className="flex justify-center items-center w-full h-[150px] lg:h-[250px] bg-gray-200 animate-pulse rounded-t-lg">
+          <div className="flex justify-center items-center text-gray-400 w-full h-[150px] lg:h-[250px] bg-gray-200 animate-pulse rounded-t-lg">
             <ICImage />
           </div>
           <div className="flex flex-col justify-between">
