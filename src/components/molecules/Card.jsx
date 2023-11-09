@@ -14,7 +14,7 @@ const Card = (props) => {
   };
 
   return (
-    <div className="mx-2 lg:mx-0 rounded-lg overflow-hidden shadow-box_item">
+    <div className="rounded-lg overflow-hidden shadow-box_item">
       <Image
         src={img ? img : "https://via.placeholder.com/250"}
         alt={img ? title : "No Image"}
