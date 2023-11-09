@@ -11,7 +11,6 @@ import { getAPIAct } from "../redux/fetch/Get";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../redux/cart/Cart";
 import Swal from "sweetalert2";
-import { Rating } from "../assets";
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -53,13 +52,7 @@ const Homepage = () => {
       navigate("/login");
     }
   };
-  const renderRatingIcons = (rate) => {
-    const icons = [];
-    for (let i = 0; i < rate; i++) {
-      icons.push(<Rating key={i} />);
-    }
-    return icons;
-  };
+
   return (
     <div>
       {role === "admin" && token ? (
@@ -82,17 +75,17 @@ const Homepage = () => {
                     rating={item.rating.rate}
                     desc={item.description}
                     id={item.id}
-                    IconRate={renderRatingIcons(item.rating.rate)}
                     onClick={() => handleAddToCart(item)}
                   />
                 ))}
               </div>
             ) : (
-              <div className="flex items-center space-x-3 w-full">
-                <Skeleton type="Card" />
-                <Skeleton type="Card" />
-                <Skeleton type="Card" />
-                <Skeleton type="Card" />
+              <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {Array.from({ length: 20 }, (index) => (
+                  <div key={index}>
+                    <Skeleton type="Card" />
+                  </div>
+                ))}
               </div>
             )}
           </div>

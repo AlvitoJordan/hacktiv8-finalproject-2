@@ -14,8 +14,14 @@ const Card = (props) => {
   };
 
   return (
-    <div className="mx-2 lg:mx-0 rounded-lg overflow-hidden shadow-box_item">
-      <Image src={img ? img : "https://via.placeholder.com/250"} alt={img ? title : "No Image"} className={`w-full h-[150px] lg:h-[250px] rounded-t-lg ${img ? "object-contain" : "object-cover"}`} />
+    <div className="rounded-lg overflow-hidden shadow-box_item">
+      <Image
+        src={img ? img : "https://via.placeholder.com/250"}
+        alt={img ? title : "No Image"}
+        className={`w-full h-[150px] lg:h-[250px] rounded-t-lg ${
+          img ? "object-contain" : "object-cover"
+        }`}
+      />
       <div className="flex flex-col justify-between">
         <div className="px-6 py-4">
           <Text type="card-category" text={categories} />

@@ -1,18 +1,27 @@
+import { ICImage } from "../../assets";
+
 const Skeleton = (props) => {
   const { type } = props;
 
   switch (type) {
     case "Card":
       return (
-        <div className="bg-gray-300 w-[340px] h-[480px] lg:h-[560px] rounded-lg p-4 animate-pulse">
-          <div className="w-full h-[150px] lg:h-[250px] rounded-t-lg bg-gray-400 animate-pulse" />
-          <div className="bg-gray-400 w-[40%] h-[30px] my-2 animate-pulse" />
-          <div className="bg-gray-400 w-[100%] h-[30px] my-2 animate-pulse" />
-          <div className="bg-gray-400 w-[100%] h-[50px] my-2 animate-pulse" />
-          <div className="bg-gray-400 w-[60%] h-[30px] my-2 animate-pulse" />
-          <div className="mt-12 flex items-center justify-end space-x-3">
-            <div className="bg-gray-400 w-[40%] h-[50px] my-2 animate-pulse" />
-            <div className="bg-gray-400 w-[50%] h-[50px] my-2 animate-pulse" />
+        <div className="lg:mx-0 overflow-hidden shadow-box_item rounded-lg ">
+          <div className="flex justify-center items-center w-full h-[150px] lg:h-[250px] bg-gray-200 animate-pulse rounded-t-lg">
+            <ICImage />
+          </div>
+          <div className="flex flex-col justify-between">
+            <div className="px-6 py-4">
+              <div className="w-1/4 h-5 mb-2 bg-gray-200 animate-pulse rounded-md"></div>
+              <div className="h-4 mb-2 bg-gray-200 animate-pulse rounded-md"></div>
+              <div className="w-1/4 h-5 mb-2 bg-gray-200 animate-pulse  rounded-md"></div>
+              <div className="h-16 mb-2  bg-gray-200 animate-pulse  rounded-md"></div>
+              <div className="w-3/4 h-5 mb-2 bg-gray-200 animate-pulse rounded-md"></div>
+            </div>
+            <div className="flex flex-col lg:flex-row justify-end gap-3 mt-5 px-6 pb-6">
+              <div className="lg:w-20 h-10 rounded-md bg-gray-200 animate-pulse"></div>
+              <div className="lg:w-40 h-10 rounded-lg bg-gray-200 animate-pulse"></div>
+            </div>
           </div>
         </div>
       );

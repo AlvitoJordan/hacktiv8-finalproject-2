@@ -12,5 +12,22 @@ import { ReactComponent as EmptyCart } from "./EmptyCart.svg";
 import { ReactComponent as ICWarning } from "./Warning.svg";
 import { ReactComponent as ICEmail } from "./email.svg";
 import { ReactComponent as ICPassword } from "./password.svg";
+import { ReactComponent as ICImage } from "./Image.svg";
 
-export { BukaPedia, ILLogin, SearchIcon, HamburgerIcon, Hacktiv8, DeleteIcon, ILProduct, BackIcon, ShoppingCart, Rating, EmptyCart, ICWarning, ICEmail, ICPassword };
+export {
+  BukaPedia,
+  ILLogin,
+  SearchIcon,
+  HamburgerIcon,
+  Hacktiv8,
+  DeleteIcon,
+  ILProduct,
+  BackIcon,
+  ShoppingCart,
+  Rating,
+  EmptyCart,
+  ICWarning,
+  ICEmail,
+  ICPassword,
+  ICImage,
+};
