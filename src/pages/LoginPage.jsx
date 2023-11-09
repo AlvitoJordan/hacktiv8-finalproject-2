@@ -1,31 +1,10 @@
-import React, { useEffect } from "react";
-import { ILLogin } from "../assets";
-import { LoginForm } from "../components/";
-import { useNavigate } from "react-router-dom";
+import { Layout, LoginForm } from "../components/";
 
 const LoginPage = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    const checkUserAndRedirect = () => {
-      const user = JSON.parse(localStorage.getItem("userData"));
-      if (user?.role === "admin") {
-        navigate("/dashboard");
-      } else if (user?.role === "user") {
-        navigate("/cart");
-      }
-    };
-    checkUserAndRedirect();
-  }, [navigate]);
-
   return (
-    <div className="flex justify-between w-full items-center px-[70px]">
-      <div>
-        <LoginForm />
-      </div>
-      <div className="flex items-center justify-center">
-        <ILLogin />
-      </div>
-    </div>
+    <Layout>
+      <LoginForm />
+    </Layout>
   );
 };
 

@@ -1,11 +1,19 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { AvailabledPage, CartPage, DisabledPage, Homepage, LoginPage, ProductDetail, Rekap } from "../pages";
+import {
+  AvailabledPage,
+  CartPage,
+  DisabledPage,
+  Homepage,
+  LoginPage,
+  ProductDetail,
+  Rekap,
+} from "../pages";
 import { ProtectedRoute } from "../services";
 
 const Router = () => {
   return (
-    <div className="px-4 lg:px-10 pt-24 pb-5">
+    <div className="">
       <ProtectedRoute>
         <Routes>
           <Route path="/" element={<Homepage />} />

@@ -9,6 +9,19 @@ import CartHeader from "./CartHeader";
 import NumberInput from "./NumberInput";
 import CartButton from "./CartButton";
 import Warning from "./Warning";
-import Skeleton from "./Skeleton";
+import HeroSection from "./HeroSection";
 
-export { NavMenu, Logo, SearchBar, Footer, Card, Header, CartHeader, CartContent, NumberInput, CartButton, Warning, Skeleton };
+export {
+  NavMenu,
+  HeroSection,
+  Logo,
+  SearchBar,
+  Footer,
+  Card,
+  Header,
+  CartHeader,
+  CartContent,
+  NumberInput,
+  CartButton,
+  Warning,
+};

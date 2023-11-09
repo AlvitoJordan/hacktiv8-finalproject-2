@@ -1,4 +1,4 @@
-import AdminHomePage from "./AdminHomePage";
-import Layout from "./Layout"
+import AdminHomePage from "../../pages/AdminHomePage";
+import Layout from "./Layout";
 
-export {AdminHomePage, Layout}
+export { AdminHomePage, Layout };
