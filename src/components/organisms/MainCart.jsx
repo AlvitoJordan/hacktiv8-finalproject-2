@@ -3,6 +3,7 @@ import { CartContent, CartHeader, Header } from "../molecules";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 import {
   addToCheckout,
   changeQuantity,
@@ -12,6 +13,7 @@ import { useEffect } from "react";
 import { Button, Text } from "../atoms";
 import { BackIcon } from "../../assets";
 import MainEmptyCart from "./MainEmptyCart";
+import Swal from "sweetalert2";
 
 const MainCart = (props) => {
   const { cart } = useSelector((state) => state.addCart);
@@ -46,6 +48,15 @@ const MainCart = (props) => {
   }
 
   const handleCheckout = (data) => {
+    const checkStock = data.some((item) => item.quantity > item.stock);
+    if (checkStock) {
+      Swal.fire({
+        icon: "error",
+        title: "Checkout failed",
+        text: "Quantity exceeds stock",
+      });
+      return;
+    }
     dispatch(addToCheckout(data));
   };
 

@@ -15,6 +15,7 @@ export const changeQuantity = createAsyncThunk(
     return { id, quantity };
   }
 );
+
 export const removeProduct = createAsyncThunk(
   "remove/product",
   async (data) => {
