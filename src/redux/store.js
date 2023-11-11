@@ -7,6 +7,10 @@ export const store = configureStore({
     getAPI: fetchReducer,
     addCart: addCartReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export default store;
