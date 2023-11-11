@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Layout from "../components/templates/Layout";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
@@ -12,21 +13,39 @@ const ProtectedRoute = ({ children }) => {
   const { pathname } = location;
   const getUser = localStorage.getItem("userData");
   const user = JSON.parse(getUser);
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
-    if (user?.role !== "admin" && routeAdmin.includes(pathname)) {
-      navigate("/");
-    }
-    if (user?.role !== "user" && routeUser.includes(pathname)) {
-      navigate("/");
-    }
-    if (user?.role === "admin" && pathname.startsWith("/detail/")) {
-      navigate("/");
-    }
-    if (user?.role === "admin" && pathname.startsWith("/search/")) {
-      navigate("/");
-    }
+    const checkRoute = () => {
+      setTimeout(() => {
+        if (user?.role !== "admin" && routeAdmin.includes(pathname)) {
+          navigate("/");
+        }
+        if (user?.role !== "user" && routeUser.includes(pathname)) {
+          navigate("/");
+        }
+        if (user?.role === "admin" && pathname.startsWith("/detail/")) {
+          navigate("/");
+        }
+        if (user?.role === "admin" && pathname.startsWith("/search/")) {
+          navigate("/");
+        }
+        setloading(false);
+      }, 1000);
+    };
+    checkRoute();
   }, [navigate, pathname, routeAdmin, routeUser, user?.role]);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="flex items-center space-x-3">
+          <div className="animate-spin rounded-full h-10 w-10 border-y-4 border-primary"></div>
+          <span class="text-4xl font-medium text-primary">Loading...</span>
+        </div>
+      </Layout>
+    );
+  }
 
   return children;
 };

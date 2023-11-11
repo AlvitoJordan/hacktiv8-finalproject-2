@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 import { Header } from "../molecules";
 import { Button } from "../atoms";
 import { BackIcon } from "../../assets";
+import { useNavigate } from "react-router-dom";
 
 const MainRekap = () => {
   const { checkout } = useSelector((state) => state.addCart);
   const [totalPrices, setTotalPrices] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const calculateTotalPrices = () => {
@@ -21,7 +23,6 @@ const MainRekap = () => {
     calculateTotalPrices();
   }, [checkout]);
 
-  console.log(checkout);
   return (
     <div className="w-full">
       <Header title="Rekap Penjualan" />
@@ -68,12 +69,11 @@ const MainRekap = () => {
       </div>
       <div className="mt-10">
         <Button
-          to="/"
-          TypeButton="ButtonLinkWithIcon"
-          icon={<BackIcon className="h-[20px] w-[20px]" />}
-        >
-          Back to dashboard
-        </Button>
+          type="CardOutlineButtonWithIcon"
+          onClick={() => navigate("/")}
+          icon={<BackIcon />}
+          text="Continue Shopping"
+        />
       </div>
     </div>
   );

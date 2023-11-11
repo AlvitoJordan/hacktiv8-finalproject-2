@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../atoms";
 
 const NumberInput = ({ value, onChange }) => {
   // Fungsi untuk mengganti nilai menjadi 0 jika nilai adalah string kosong
@@ -20,12 +21,11 @@ const NumberInput = ({ value, onChange }) => {
 
   return (
     <div className="flex items-center justify-center space-x-2">
-      <button
+      <Button
+        type="OperatorButton"
         onClick={() => handleCalculation("decrement")}
-        className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-3 rounded-md"
-      >
-        -
-      </button>
+        text="-"
+      />
       <input
         type="number"
         name="number"
@@ -33,12 +33,11 @@ const NumberInput = ({ value, onChange }) => {
         onChange={handleInputChange}
         className="text-center w-16 h-10 bg-white border-2 border-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent rounded-md"
       />
-      <button
+      <Button
+        type="OperatorButton"
         onClick={() => handleCalculation("increment")}
-        className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-3 rounded-md"
-      >
-        +
-      </button>
+        text="+"
+      />
     </div>
   );
 };

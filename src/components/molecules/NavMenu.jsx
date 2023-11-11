@@ -28,19 +28,34 @@ const NavMenu = () => {
     <div className="flex items-center">
       <ul className="flex-col hidden pt-6 lg:flex-row lg:self-center lg:py-0 lg:flex">
         <li className="flex items-center">
-          <Links to="/" className={`mx-5 px-2 font-semibold text-darkgray hover:text-secondary ${pathname === "/" ? "text-primary" : ""}`}>
+          <Links
+            to="/"
+            className={`mx-5 px-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
+              pathname === "/" ? "text-primary" : ""
+            }`}
+          >
             Home
           </Links>
         </li>
         <li className="flex items-center">
           {role === "admin" ? (
-            <Links to="/rekap" className={`mx-5 px-2 font-semibold text-darkgray hover:text-secondary ${pathname === "/rekap" ? "text-primary" : ""}`}>
+            <Links
+              to="/rekap"
+              className={`mx-5 px-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
+                pathname === "/rekap" ? "text-primary" : ""
+              }`}
+            >
               Rekap Penjualan
             </Links>
           ) : (
             role === "user" && (
               <>
-                <Links to="/cart" className={`mx-5 px-2 font-semibold text-darkgray hover:text-secondary ${pathname === "/cart" ? "text-primary" : ""}`}>
+                <Links
+                  to="/cart"
+                  className={`mx-5 px-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
+                    pathname === "/cart" ? "text-primary" : ""
+                  }`}
+                >
                   Cart
                 </Links>
               </>
@@ -49,49 +64,79 @@ const NavMenu = () => {
         </li>
         <li className="flex items-center">
           {token ? (
-            <Button TypeButton="ButtonPrimary" className="bg-white border-primary border-2 text-primary font-semibold hover:bg-white" onClick={handleLogout}>
-              Logout
-            </Button>
+            <Button
+              type="NavigationOutlineBorderButton"
+              text="Logout"
+              onClick={handleLogout}
+            />
           ) : (
-            <Button to={"/login"} TypeButton="ButtonLink" className="font-semibold px-6 py-2">
-              Login
-            </Button>
+            <Button to="/login" type="LinkPrimaryButton" text="Login" />
           )}
         </li>
       </ul>
       <div className="lg:hidden relative flex items-center">
-        <Button onClick={toogleDropdown} className="text-primary hover:text-secondary">
+        <Button
+          onClick={toogleDropdown}
+          className="text-primary hover:text-secondary"
+        >
           <HamburgerIcon />
         </Button>
 
         {isOpen && (
-          <div className="absolute top-14 right-0 bg-white border rounded-md border-gray-300 shadow-md mt-2">
-            <ul>
-              <li className="flex flex-col">
-                <Links to="/" className="hover:bg-primary hover:rounded-t-md hover:text-vanilla block py-2 px-10">
+          <div className="w-[250px] absolute top-14 right-0 bg-white border rounded-md border-gray-300 shadow-md">
+            <ul className="flex flex-col items-center">
+              <li className="flex items-center">
+                <Links
+                  to="/"
+                  className={`mx-5 px-2 py-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
+                    pathname === "/" ? "text-primary" : ""
+                  }`}
+                >
                   Home
                 </Links>
               </li>
-              <li className="flex flex-col">
-                {role === "user" ? (
+              <li className="flex items-center">
+                {role === "admin" ? (
                   <>
-                    <Links to="/cart" className="mx-5 px-2 font-semibold text-darkgray">
-                      Cart
+                    <Links
+                      to="/rekap"
+                      className={`mx-5 px-2 py-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
+                        pathname === "/rekap" ? "text-primary" : ""
+                      }`}
+                    >
+                      Rekap Penjualan
                     </Links>
                   </>
                 ) : (
                   <>
-                    <Links to="/rekap" className="mx-5 px-2 font-semibold text-darkgray">
-                      Rekap Penjualan
+                    <Links
+                      to="/cart"
+                      className={`mx-5 px-2 py-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
+                        pathname === "/cart" ? "text-primary" : ""
+                      }`}
+                    >
+                      Cart
                     </Links>
                   </>
                 )}
               </li>
               <li className="flex flex-col">
                 {token ? (
-                  <Button className="hover:bg-primary hover:rounded-b-md hover:text-vanilla block py-2 px-10 border-t-2">Logout</Button>
+                  <Button
+                    className={
+                      "mx-5 px-2 my-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap"
+                    }
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </Button>
                 ) : (
-                  <Links to="/login" className="hover:bg-primary hover:rounded-b-md hover:text-vanilla block py-2 px-10 border-t-2">
+                  <Links
+                    to="/login"
+                    className={`mx-5 px-2 py-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
+                      pathname === "/login" ? "text-primary" : ""
+                    }`}
+                  >
                     Login
                   </Links>
                 )}

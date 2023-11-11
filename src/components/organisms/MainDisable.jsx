@@ -5,9 +5,10 @@ import SideProduct from "../molecules/SideProduct";
 import SubNavHeader from "../molecules/SubNavHeader";
 import SubNav from "../molecules/SubNav";
 import { Header } from "../molecules";
-import { changeStatusProduct } from "../../redux/fetch/Get";
+import { changeStatusProduct, updateStock } from "../../redux/fetch/Get";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const MainDisable = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -19,12 +20,38 @@ const MainDisable = () => {
   const pageCount = Math.ceil(activeProducts.length / perPage);
   const offset = currentPage * perPage;
   const currentPageData = activeProducts.slice(offset, offset + perPage);
+  const [pendingUpdates, setPendingUpdates] = useState({});
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
-  const handleInputChange = (e) => {
-    // onChange(e.target.value);
+  const handleInputChange = (productId, value) => {
+    setPendingUpdates((prevUpdates) => ({
+      ...prevUpdates,
+      [productId]: value,
+    }));
+  };
+
+  const handleConfirmUpdate = (productId) => {
+    const newStock = pendingUpdates[productId];
+    if (newStock !== undefined) {
+      dispatch(updateStock({ id: productId, stock: newStock }));
+      setPendingUpdates((prevUpdates) => ({
+        ...prevUpdates,
+        [productId]: undefined,
+      }));
+    }
+    Swal.fire({
+      title: "Success",
+      text: "Stock has been update",
+      icon: "success",
+      confirmButtonText: "OK",
+      customClass: {
+        confirmButton:
+          "font-semibold px-6 py-2 hover:bg-secondary bg-primary text-white rounded-lg",
+      },
+      buttonsStyling: false,
+    });
   };
   const handleCheckboxChange = (id) => {
     dispatch(changeStatusProduct({ id, products }));
@@ -77,19 +104,24 @@ const MainDisable = () => {
             <div className="flex justify-center">
               <input
                 type="number"
-                value={item.stock}
-                onChange={handleInputChange}
+                value={
+                  pendingUpdates[item.id] !== undefined
+                    ? pendingUpdates[item.id]
+                    : item.stock
+                }
                 className="text-center w-16 h-10 bg-white border-2 border-secondary rounded-md"
+                onChange={(e) =>
+                  handleInputChange(item.id, parseInt(e.target.value, 10))
+                }
               />
             </div>
 
             <div className="flex justify-center">
               <Button
-                TypeButton="ButtonPrimary"
-                className="font-semibold text-white"
-              >
-                Update
-              </Button>
+                type="SmallPrimaryButton"
+                onClick={() => handleConfirmUpdate(item.id)}
+                text="Update"
+              />
             </div>
           </div>
         ))}
