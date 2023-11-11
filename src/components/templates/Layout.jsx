@@ -10,7 +10,7 @@ const Layout = (props) => {
       <NavBar />
       <div className="min-h-screen flex flex-col ">
         <Gap className="bg-white flex items-center justify-center w-full h-16 px-5 py-3 border-b-2 border-lightgray top-0" />
-        <main className="flex-1 px-4 lg:px-10 pb-5 flex items-center justify-center">
+        <main className="flex-1 px-4 lg:px-10 py-5 flex items-center justify-center">
           {children}
         </main>
         <Footer

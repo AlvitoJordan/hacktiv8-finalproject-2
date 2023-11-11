@@ -8,7 +8,7 @@ const Button = (props) => {
       return (
         <button
           onClick={onClick}
-          className="bg-primary text-white px-6 py-2 rounded-lg flex w-[18%] space-x-3 justify-center items-center text-base lg:text-2xl font-semibold hover:bg-secondary hover:border-secondary hover:text-white"
+          className="bg-primary text-white px-6 py-2 rounded-md flex space-x-3 justify-center items-center text-base lg:text-2xl font-semibold hover:bg-secondary hover:border-secondary hover:text-white"
         >
           {text}
         </button>
@@ -63,7 +63,7 @@ const Button = (props) => {
       return (
         <button
           onClick={onClick}
-          className={`px-4 py-2 rounded-lg flex space-x-3 justify-center items-center bg-white border-primary border-2 text-primary font-semibold hover:bg-secondary hover:text-white hover:border-transparent`}
+          className={`px-4 py-2 rounded-md flex space-x-3 justify-center items-center bg-white border-primary border-2 text-primary font-semibold hover:bg-secondary hover:text-white hover:border-transparent`}
         >
           {icon}
           <p>{text}</p>
@@ -73,7 +73,7 @@ const Button = (props) => {
       return (
         <Link
           to={to}
-          className="font-semibold px-6 py-2 bg-primary text-white rounded-lg flex space-x-3 justify-center items-center hover:bg-secondary hover:border-secondary hover:text-white"
+          className="font-semibold px-6 py-2 bg-primary text-white rounded-md flex space-x-3 justify-center items-center hover:bg-secondary hover:border-secondary hover:text-white"
         >
           {text}
         </Link>
@@ -82,7 +82,7 @@ const Button = (props) => {
       return (
         <Button
           onClick={onClick}
-          className="font-semibold px-6 py-2 bg-primary text-white rounded-lg flex space-x-3 justify-center items-center hover:bg-secondary hover:border-secondary hover:text-white"
+          className="font-semibold px-6 py-2 bg-primary text-white rounded-md flex space-x-3 justify-center items-center hover:bg-secondary hover:border-secondary hover:text-white"
         >
           {text}
         </Button>
