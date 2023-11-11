@@ -58,8 +58,16 @@ const SubNavContent = () => {
       {currentPageData.length > 0 ? (
         <>
           {currentPageData.map((item) => (
-            <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center justify-center p-5 border-lightgray border-b-2" key={item.id}>
-              <SideProduct image={item.image} title={item.title} categories={item.category} />
+
+            <div
+              className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center justify-center p-5 border-lightgray border-b-2"
+              key={item.id}
+            >
+              <SideProduct
+                image={item.image}
+                title={item.title}
+                categories={item.category}
+              />
               <div className="flex justify-center items-center">
                 <label className="relative inline-flex items-center cursor-pointer select-none">
                   <input type="checkbox" className="peer sr-only" checked={item.status === "active"} onChange={() => handleCheckboxChange(item.id)} />

@@ -10,6 +10,8 @@ import {
   Rekap,
 } from "../pages";
 import { ProtectedRoute } from "../services";
+import SearchPage from "../pages/SearchPage";
+import NotFound404Page from "../pages/NotFound404Page";
 
 const Router = () => {
   return (
@@ -23,6 +25,8 @@ const Router = () => {
           <Route path="/disabled" element={<DisabledPage />} />
           <Route path="/rekap" element={<Rekap />} />
           <Route path="/detail/:id" element={<ProductDetail />} />
+          <Route path="/search/:searchProduct" element={<SearchPage />} />
+          <Route path="*" element={<NotFound404Page />} />
         </Routes>
       </ProtectedRoute>
     </div>

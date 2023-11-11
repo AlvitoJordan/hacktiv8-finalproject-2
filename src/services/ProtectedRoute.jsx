@@ -23,6 +23,9 @@ const ProtectedRoute = ({ children }) => {
     if (user?.role === "admin" && pathname.startsWith("/detail/")) {
       navigate("/");
     }
+    if (user?.role === "admin" && pathname.startsWith("/search/")) {
+      navigate("/");
+    }
   }, [navigate, pathname, routeAdmin, routeUser, user?.role]);
 
   return children;
