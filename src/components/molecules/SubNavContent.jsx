@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Button, Text } from "../atoms";
 import SideProduct from "./SideProduct";
 import { useDispatch, useSelector } from "react-redux";
-import { changeStatusProduct, getAPIAct } from "../../redux/fetch/Get";
+import {
+  changeStatusProduct,
+  getAPIAct,
+  updateStock,
+} from "../../redux/fetch/Get";
 import ReactPaginate from "react-paginate";
 import Skeleton from "../atoms/Skeleton";
 
@@ -16,6 +20,7 @@ const SubNavContent = () => {
   const offset = currentPage * perPage;
   const currentPageData = products.slice(offset, offset + perPage);
 
+  const [pendingUpdates, setPendingUpdates] = useState({});
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
@@ -23,17 +28,35 @@ const SubNavContent = () => {
     if (products.length === 0) {
       dispatch(getAPIAct(`https://fakestoreapi.com/products`));
     }
-  }, [dispatch, products.length]);
+  }, [dispatch, products.length, products]);
 
-  const handleInputChange = (e) => {
-    // onChange(e.target.value);
-  };
   const handleCheckboxChange = (id) => {
     dispatch(changeStatusProduct({ id, products }));
   };
 
+  const handleInputChange = (productId, value) => {
+    setPendingUpdates((prevUpdates) => ({
+      ...prevUpdates,
+      [productId]: value,
+    }));
+  };
+
+  const handleConfirmUpdate = (productId) => {
+    const newStock = pendingUpdates[productId];
+    if (newStock !== undefined) {
+      dispatch(updateStock({ id: productId, stock: newStock }));
+      console.log("Updated stock for product", productId, "to", newStock);
+      setPendingUpdates((prevUpdates) => ({
+        ...prevUpdates,
+        [productId]: undefined,
+      }));
+    }
+  };
+
   return (
     <>
+      {console.log(products)}
+
       {currentPageData.length > 0 ? (
         <>
           {currentPageData.map((item) => (
@@ -41,6 +64,7 @@ const SubNavContent = () => {
               className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center justify-center p-5 border-lightgray border-b-2"
               key={item.id}
             >
+              {console.log("pendingUpdate ID : ", pendingUpdates[item.id])}
               <SideProduct
                 image={item.image}
                 title={item.title}
@@ -77,9 +101,15 @@ const SubNavContent = () => {
               <div className="flex justify-center">
                 <input
                   type="number"
-                  value={item.stock}
-                  onChange={handleInputChange}
+                  value={
+                    pendingUpdates[item.id] !== undefined
+                      ? pendingUpdates[item.id]
+                      : item.stock
+                  }
                   className="text-center w-16 h-10 bg-white border-2 border-secondary rounded-md"
+                  onChange={(e) =>
+                    handleInputChange(item.id, parseInt(e.target.value, 10))
+                  }
                 />
               </div>
 
@@ -87,6 +117,7 @@ const SubNavContent = () => {
                 <Button
                   TypeButton="ButtonPrimary"
                   className="font-semibold text-white"
+                  onClick={() => handleConfirmUpdate(item.id)}
                 >
                   Update
                 </Button>

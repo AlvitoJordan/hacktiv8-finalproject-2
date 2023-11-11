@@ -10,6 +10,7 @@ import { Button, Text } from "../atoms";
 import { BackIcon } from "../../assets";
 import MainEmptyCart from "./MainEmptyCart";
 import Swal from "sweetalert2";
+import { updateProduct } from "../../redux/fetch/Get";
 
 const MainCart = (props) => {
   const { cart } = useSelector((state) => state.addCart);
@@ -50,12 +51,25 @@ const MainCart = (props) => {
       });
       return;
     }
+    data.forEach((item) => {
+      dispatch(
+        updateProduct({
+          id: item.id,
+          quantity: item.quantity,
+        })
+      );
+    });
+
     dispatch(addToCheckout(data));
+
+    navigate("/");
+
     Swal.fire({
       title: "Success",
       text: "Product has been checkout",
       icon: "success",
     });
+
   };
 
   return (
