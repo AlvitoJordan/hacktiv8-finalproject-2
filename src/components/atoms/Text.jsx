@@ -1,7 +1,7 @@
 import React from "react";
 
 const Text = (props) => {
-  const { className, text, maxLength, type } = props;
+  const { className, text, maxLength, type, subText } = props;
   switch (type) {
     case "header":
       return (
@@ -10,6 +10,17 @@ const Text = (props) => {
             {text}
           </h1>
           <div className="border-b border-[3px] border-lightgray w-full mb-10" />
+        </>
+      );
+    case "hero-header":
+      return (
+        <>
+          <div className="font-bold text-3xl lg:text-5xl text-darkgray my-7 lg:w-[80%]">
+            {text}
+          </div>
+          <div className="text-base lg:text-2xl  w-full text-grayCS lg:w-[90%]">
+            {subText}
+          </div>
         </>
       );
     case "card-title":

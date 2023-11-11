@@ -8,19 +8,16 @@ const HeroSection = () => {
     <div className="flex flex-col-reverse justify-between items-center lg:flex-row w-full ">
       <div className="lg:w-1/2 flex flex-col">
         <Text
-          className="font-bold text-3xl lg:text-5xl text-darkgray my-7 lg:w-[80%]"
+          type="hero-header"
           text="E-Commerce Futurist: Digital Revolution"
-        ></Text>
-        <Text
-          className="text-base lg:text-2xl  w-full text-grayCS lg:w-[90%]"
-          text="Unlock the potential of your e-commerce venture with our cutting-edge
+          subText="Unlock the potential of your e-commerce venture with our cutting-edge
           solutions. Our platform empowers you to harness the full force of the
           digital landscape, driving unprecedented growth and success."
-        ></Text>
+        />
         <div className="flex flex-row my-10 space-x-4">
           <Button
-            TypeButton="ButtonPrimary"
-            className="text-white py-2 px-6 text-base lg:text-2xl font-semibold hover:bg-secondary hover:border-secondary hover:text-white"
+            type="PrimaryButton"
+            text="Explore"
             onClick={() =>
               Swal.fire({
                 title: "Welcome to Bukapedia!",
@@ -33,12 +30,10 @@ const HeroSection = () => {
                 buttonsStyling: false,
               })
             }
-          >
-            Explore
-          </Button>
+          />
           <Button
-            TypeButton="ButtonPrimary"
-            className="border-2 border-primary bg-white text-primary py-2 px-6 text-base lg:text-2xl font-semibold hover:bg-secondary hover:text-white hover:border-secondary"
+            type="OutlineBorderButton"
+            text="Learn More"
             onClick={() =>
               Swal.fire({
                 title: "Learn more!",
@@ -52,9 +47,7 @@ const HeroSection = () => {
                 buttonsStyling: false,
               })
             }
-          >
-            Learn More
-          </Button>
+          />
         </div>
       </div>
       <div className="lg:w-1/2 flex justify-center lg:p-10">

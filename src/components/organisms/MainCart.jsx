@@ -77,6 +77,12 @@ const MainCart = () => {
       title: "Success",
       text: "Product has been checkout",
       icon: "success",
+      confirmButtonText: "OK",
+      customClass: {
+        confirmButton:
+          "font-semibold px-6 py-2 hover:bg-secondary bg-primary text-white rounded-lg",
+      },
+      buttonsStyling: false,
     });
   };
 
@@ -116,21 +122,17 @@ const MainCart = () => {
           </div>
           <div className="flex flex-row justify-between mt-6 pt-4 pb-4">
             <Button
-              TypeButton="ButtonPrimaryWithIcon"
-              className="bg-white hover:bg-secondary hover:border-transparent hover:text-white text-primary font-semibold py-2 px-3 border-[3px] border-primary rounded-md shadow"
+              type="CardOutlineButtonWithIcon"
               onClick={() => navigate("/")}
               icon={<BackIcon />}
-            >
-              Continue Shopping
-            </Button>
+              text="Continue Shopping"
+            />
 
             <Button
-              TypeButton="ButtonPrimary"
-              className="text-white font-semibold"
+              type="SmallPrimaryButton"
               onClick={() => handleCheckout(cart)}
-            >
-              Checkout
-            </Button>
+              text="Checkout"
+            />
           </div>
         </>
       ) : (

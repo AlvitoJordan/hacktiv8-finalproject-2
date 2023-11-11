@@ -21,15 +21,12 @@ const MainEmptyCart = () => {
         text="
                 Click here to continue shopping"
       ></Text>
-      <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow">
-        <div
-          className="flex flex-row px-5 items-center"
-          onClick={() => navigate("/")}
-        >
-          <ShoppingCart />
-          <Text className="ml-3" text="Continue Shopping" />
-        </div>
-      </Button>
+      <Button
+        type="LongPrimaryButtonWithIcon"
+        text="Continue Shopping"
+        icon={<ShoppingCart />}
+        onClick={() => navigate("/")}
+      ></Button>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, NotFound, SearchNotFound } from "../../assets";
+import { Home, NotFound } from "../../assets";
 import { Button, Text } from "../atoms";
 import { useNavigate } from "react-router-dom";
 
@@ -14,18 +14,14 @@ const Main404 = () => {
       ></Text>
       <Text
         className="text-base font-medium my-4 text-darkgray"
-        text="
-                      Something Error"
+        text="Something Error"
       ></Text>
-      <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow">
-        <div
-          className="flex flex-row px-5 items-center"
-          onClick={() => navigate("/")}
-        >
-          <Home />
-          <Text className="ml-3" text="Back to Home" />
-        </div>
-      </Button>
+      <Button
+        type="LongPrimaryButtonWithIcon"
+        text="Continue Shopping"
+        icon={<Home />}
+        onClick={() => navigate("/")}
+      ></Button>
     </div>
   );
 };

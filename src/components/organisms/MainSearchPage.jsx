@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Skeleton, Text } from "../atoms";
+import { Button, Text } from "../atoms";
 import { Card, Header } from "../molecules";
 import Swal from "sweetalert2";
 import { addToCart } from "../../redux/cart/Cart";
@@ -81,15 +81,12 @@ const MainSearchPage = () => {
               text="
                       Try other keyword"
             ></Text>
-            <Button className="bg-primary hover:bg-secondary text-white font-semibold py-2 px-5 border-2 border-transparent rounded-md shadow">
-              <div
-                className="flex flex-row px-5 items-center"
-                onClick={() => navigate("/")}
-              >
-                <Home />
-                <Text className="ml-3" text="Back to Home" />
-              </div>
-            </Button>
+            <Button
+              type="LongPrimaryButtonWithIcon"
+              text="Continue Shopping"
+              icon={<Home />}
+              onClick={() => navigate("/")}
+            ></Button>
           </div>
         )}
       </div>
