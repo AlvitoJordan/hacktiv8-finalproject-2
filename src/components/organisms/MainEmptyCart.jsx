@@ -9,11 +9,11 @@ const MainEmptyCart = () => {
     <div className="w-full flex flex-col items-center justify-center">
       <EmptyCart />
       <Text
-        className="font-bold text-5xl mt-5 text-darkgray"
+        className="font-bold text-3xl text-center lg:text-5xl mt-5 text-darkgray"
         text="You cart is currenty empty!"
       ></Text>
       <Text
-        className="text-base font-medium mt-4 text-darkgray"
+        className="text-base text-center font-medium mt-4 text-darkgray"
         text="Looks like you have not added anything to you cart."
       ></Text>
       <Text

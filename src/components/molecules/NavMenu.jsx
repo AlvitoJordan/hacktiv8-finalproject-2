@@ -108,16 +108,18 @@ const NavMenu = () => {
                     </Links>
                   </>
                 ) : (
-                  <>
-                    <Links
-                      to="/cart"
-                      className={`mx-5 px-2 py-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
-                        pathname === "/cart" ? "text-primary" : ""
-                      }`}
-                    >
-                      Cart
-                    </Links>
-                  </>
+                  role === "user" && (
+                    <>
+                      <Links
+                        to="/cart"
+                        className={`mx-5 px-2 py-2 font-semibold text-darkgray hover:text-secondary whitespace-nowrap ${
+                          pathname === "/cart" ? "text-primary" : ""
+                        }`}
+                      >
+                        Cart
+                      </Links>
+                    </>
+                  )
                 )}
               </li>
               <li className="flex flex-col">
