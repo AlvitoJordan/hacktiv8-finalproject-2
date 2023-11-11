@@ -41,7 +41,6 @@ const SubNavContent = () => {
     const newStock = pendingUpdates[productId];
     if (newStock !== undefined) {
       dispatch(updateStock({ id: productId, stock: newStock }));
-      console.log("Updated stock for product", productId, "to", newStock);
       setPendingUpdates((prevUpdates) => ({
         ...prevUpdates,
         [productId]: undefined,
@@ -56,13 +55,10 @@ const SubNavContent = () => {
 
   return (
     <>
-      {console.log(products)}
-
       {currentPageData.length > 0 ? (
         <>
           {currentPageData.map((item) => (
             <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center justify-center p-5 border-lightgray border-b-2" key={item.id}>
-              {console.log("pendingUpdate ID : ", pendingUpdates[item.id])}
               <SideProduct image={item.image} title={item.title} categories={item.category} />
               <div className="flex justify-center items-center">
                 <label className="relative inline-flex items-center cursor-pointer select-none">
