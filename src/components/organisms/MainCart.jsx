@@ -17,7 +17,7 @@ import MainEmptyCart from "./MainEmptyCart";
 import Swal from "sweetalert2";
 import { updateProduct } from "../../redux/fetch/Get";
 
-const MainCart = (props) => {
+const MainCart = () => {
   const { cart } = useSelector((state) => state.addCart);
 
   const dispatch = useDispatch();
