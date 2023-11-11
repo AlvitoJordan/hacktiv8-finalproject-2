@@ -3,6 +3,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const addToCart = createAsyncThunk("cart/addToCart", async (product) => {
   return product;
 });
+
+export const removeCart = createAsyncThunk("cart/removeAll", async () => {
+  return null;
+});
+
 export const addToCheckout = createAsyncThunk(
   "cart/addCheckout",
   async (product) => {
@@ -47,7 +52,7 @@ const AddCartSlice = createSlice({
       }
     });
     builder.addCase(addToCheckout.fulfilled, (state, action) => {
-      state.checkout = action.payload;
+      state.checkout = [...state.checkout, ...action.payload];
     });
     builder.addCase(changeQuantity.fulfilled, (state, action) => {
       const { id, quantity } = action.payload;
@@ -57,6 +62,9 @@ const AddCartSlice = createSlice({
     });
     builder.addCase(removeProduct.fulfilled, (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+    });
+    builder.addCase(removeCart.fulfilled, (state) => {
+      state.cart = [];
     });
   },
 });

@@ -4,7 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import { addToCheckout, changeQuantity, removeProduct } from "../../redux/cart/Cart";
+import {
+  addToCheckout,
+  changeQuantity,
+  removeCart,
+  removeProduct,
+} from "../../redux/cart/Cart";
 import { useEffect } from "react";
 import { Button, Text } from "../atoms";
 import { BackIcon } from "../../assets";
@@ -24,7 +29,10 @@ const MainCart = (props) => {
   };
   useEffect(() => {
     const calculateTotalPrices = () => {
-      const newTotalPrices = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      const newTotalPrices = cart.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
       setTotalPrices(newTotalPrices);
     };
     calculateTotalPrices();
@@ -61,6 +69,7 @@ const MainCart = (props) => {
     });
 
     dispatch(addToCheckout(data));
+    dispatch(removeCart());
 
     navigate("/");
 
@@ -69,7 +78,6 @@ const MainCart = (props) => {
       text: "Product has been checkout",
       icon: "success",
     });
-
   };
 
   return (
@@ -99,7 +107,12 @@ const MainCart = (props) => {
         <>
           <div className="flex space-x-4 justify-end items-center my-10 ">
             <Text className="font-semibold text-3xl" text="Total =" />
-            <Text type="dolar" className="font-semibold text-3xl" text={`$ ${totalPrices}`} maxLength="8" />
+            <Text
+              type="dolar"
+              className="font-semibold text-3xl"
+              text={`$ ${totalPrices}`}
+              maxLength="8"
+            />
           </div>
           <div className="flex flex-row justify-between mt-6 pt-4 pb-4">
             <Button
@@ -111,7 +124,11 @@ const MainCart = (props) => {
               Continue Shopping
             </Button>
 
-            <Button TypeButton="ButtonPrimary" className="text-white font-semibold" onClick={() => handleCheckout(cart)}>
+            <Button
+              TypeButton="ButtonPrimary"
+              className="text-white font-semibold"
+              onClick={() => handleCheckout(cart)}
+            >
               Checkout
             </Button>
           </div>

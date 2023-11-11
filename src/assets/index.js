@@ -13,8 +13,12 @@ import { ReactComponent as ICWarning } from "./Warning.svg";
 import { ReactComponent as ICEmail } from "./email.svg";
 import { ReactComponent as ICPassword } from "./password.svg";
 import { ReactComponent as ICImage } from "./Image.svg";
+import { ReactComponent as SearchNotFound } from "./SearchNotFound.svg";
+import { ReactComponent as Home } from "./Home.svg";
+import { ReactComponent as NotFound } from "./404.svg";
 
 export {
+  Home,
   BukaPedia,
   ILLogin,
   SearchIcon,
@@ -30,4 +34,6 @@ export {
   ICEmail,
   ICPassword,
   ICImage,
+  SearchNotFound,
+  NotFound,
 };

@@ -55,8 +55,6 @@ const SubNavContent = () => {
 
   return (
     <>
-      {console.log(products)}
-
       {currentPageData.length > 0 ? (
         <>
           {currentPageData.map((item) => (
@@ -64,7 +62,6 @@ const SubNavContent = () => {
               className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center justify-center p-5 border-lightgray border-b-2"
               key={item.id}
             >
-              {console.log("pendingUpdate ID : ", pendingUpdates[item.id])}
               <SideProduct
                 image={item.image}
                 title={item.title}
