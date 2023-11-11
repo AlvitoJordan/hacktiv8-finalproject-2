@@ -20,8 +20,6 @@ const Mainproducts = () => {
   useEffect(() => {
     const fetchProductById = async () => {
       const product = products[id - 1];
-      console.log("product.id: ", products[id - 1]);
-      console.log("Id", id);
       return product;
     };
     fetchProductById();
@@ -51,50 +49,22 @@ const Mainproducts = () => {
           {products[id - 1] !== null && (
             <>
               <div className="flex justify-center w-2/4">
-                <Image
-                  src={products[id - 1].image}
-                  alt={products[id - 1].title}
-                  className="rounded-lg w-[500px] h-[500px] object-contain"
-                />
+                <Image src={products[id - 1].image} alt={products[id - 1].title} className="rounded-lg w-[500px] h-[500px] object-contain" />
               </div>
               <div className="px-5 py-5 w-2/4">
-                <Text
-                  className="font-bold text-5xl text-darkgray"
-                  text={products[id - 1].title}
-                />
+                <Text className="font-bold text-5xl text-darkgray" text={products[id - 1].title} />
                 <div className="flex flex-row gap-3 items-center text-yellow mt-2">
                   <Rating />
-                  <Text
-                    className="text-darkgray font-semibold text-lg mt-1"
-                    text={products[id - 1].rating?.rate}
-                  />
+                  <Text className="text-darkgray font-semibold text-lg mt-1" text={products[id - 1].rating?.rate} />
                 </div>
-                <Text
-                  className="text-2xl font-semibold my-4 text-darkgray"
-                  text={`$ ${products[id - 1].price}`}
-                />
-                <Text
-                  className="text-base font-medium my-4 text-grayCS"
-                  text={products[id - 1].description}
-                />
+                <Text className="text-2xl font-semibold my-4 text-darkgray" text={`$ ${products[id - 1].price}`} />
+                <Text className="text-base font-medium my-4 text-grayCS" text={products[id - 1].description} />
                 <div className="flex flex-row gap-5 items-center mt-5 mb-2">
-                  <NumberInput
-                    value={inputNumber}
-                    onChange={(val) => setInputNumber(val)}
-                  />
-                  <Text
-                    className="text-darkgray font-semibold"
-                    text={`Stock : ${products[id - 1].stock}`}
-                  />
+                  <NumberInput value={inputNumber} onChange={(val) => setInputNumber(val)} />
+                  <Text className="text-darkgray font-semibold" text={`Stock : ${products[id - 1].stock}`} />
                 </div>
                 <p className="text-red-500 mb-8">{error}</p>
-                <Button
-                  type="submit"
-                  TypeButton="ButtonPrimaryWithIcon"
-                  icon={<ShoppingCart />}
-                  className="text-white font-semibold"
-                  onClick={handleCart}
-                >
+                <Button type="submit" TypeButton="ButtonPrimaryWithIcon" icon={<ShoppingCart />} className="text-white font-semibold" onClick={handleCart}>
                   Add to cart
                 </Button>
               </div>
