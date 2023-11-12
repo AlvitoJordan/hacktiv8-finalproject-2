@@ -73,17 +73,17 @@ const MainSearchPage = () => {
           <div className="w-full flex flex-col items-center justify-center">
             <SearchNotFound />
             <Text
-              className="font-bold text-5xl mt-5 text-darkgray"
+              className="font-bold text-3xl text-center lg:text-5xl mt-5 text-darkgray"
               text="Oops, Product not found!"
             ></Text>
             <Text
-              className="text-base font-medium my-4 text-darkgray"
+              className="text-base text-center font-medium my-4 text-darkgray"
               text="
                       Try other keyword"
             ></Text>
             <Button
               type="LongPrimaryButtonWithIcon"
-              text="Continue Shopping"
+              text="Back to HomePage"
               icon={<Home />}
               onClick={() => navigate("/")}
             ></Button>

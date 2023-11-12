@@ -1,6 +1,5 @@
 import React from "react";
-import { Layout } from "../components";
-import Main404 from "../components/organisms/Main404";
+import { Layout, Main404 } from "../components";
 
 const NotFound404Page = () => {
   return (

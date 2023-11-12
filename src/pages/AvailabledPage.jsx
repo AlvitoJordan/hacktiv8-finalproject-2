@@ -1,7 +1,5 @@
 import React from "react";
-import { Layout } from "../components";
-
-import MainAvailable from "../components/organisms/MainAvailable";
+import { Layout, MainAvailable } from "../components";
 
 const AvailabledPage = () => {
   return (

@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { NumberInput, Warning } from "../molecules";
@@ -24,8 +23,6 @@ const Mainproducts = () => {
       if (products.length === 0) {
         await dispatch(getAPIAct(`https://fakestoreapi.com/products`));
       }
-
-      console.log("Products loaded:", products);
     };
 
     fetchData();
@@ -33,10 +30,6 @@ const Mainproducts = () => {
 
   const getProductbyId = products.find((item) => String(item.id) === id);
 
-  console.log("Products : ", products);
-  console.log("ID sekarang :", id);
-
-  console.log("Get Product with ID using Find : ", getProductbyId);
 
   const handleCart = () => {
     const user = JSON.parse(localStorage.getItem("userData"));
@@ -94,13 +87,15 @@ const Mainproducts = () => {
                   className="text-base font-medium my-4 text-grayCS"
                   text={getProductbyId.description}
                 />
-                <div className="flex flex-row gap-3 lg:gap-5 items-center mt-5 mb-2 max-[768px]:w-full">
+
+                <div className="flex flex-row gap-3 lg:gap-5 items-center mt-5 mb-2">
                   <NumberInput
                     value={inputNumber}
                     onChange={(val) => setInputNumber(val)}
                   />
                   <Text
-                    className="text-darkgray font-semibold max-[768px]:w-full"
+
+                    className="text-darkgray font-semibold"
                     text={`Stock : ${getProductbyId.stock}`}
                   />
                 </div>
@@ -117,7 +112,7 @@ const Mainproducts = () => {
             <div className="flex-1 px-4 lg:px-10 py-5 flex items-center justify-center">
               <div className="flex items-center space-x-3">
                 <div className="animate-spin rounded-full h-10 w-10 border-y-4 border-primary"></div>
-                <span class="text-4xl font-medium text-primary">
+                <span className="text-4xl font-medium text-primary">
                   Loading...
                 </span>
               </div>

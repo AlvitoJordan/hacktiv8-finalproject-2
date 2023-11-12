@@ -1,15 +1,19 @@
-import NavMenu from "./NavMenu";
-import Logo from "./Logo";
-import SearchBar from "./SearchBar";
-import Footer from "./Footer";
 import Card from "./Card";
-import Header from "./Header";
+import CartButton from "./CartButton";
 import CartContent from "./CartContent";
 import CartHeader from "./CartHeader";
-import NumberInput from "./NumberInput";
-import CartButton from "./CartButton";
-import Warning from "./Warning";
+import Footer from "./Footer";
+import Header from "./Header";
 import HeroSection from "./HeroSection";
+import Logo from "./Logo";
+import NavMenu from "./NavMenu";
+import NumberInput from "./NumberInput";
+import SearchBar from "./SearchBar";
+import SideProduct from "./SideProduct";
+import SubNav from "./SubNav";
+import SubNavContent from "./SubNavContent";
+import SubNavHeader from "./SubNavHeader";
+import Warning from "./Warning";
 
 export {
   NavMenu,
@@ -24,4 +28,8 @@ export {
   NumberInput,
   CartButton,
   Warning,
+  SubNav,
+  SubNavContent,
+  SubNavHeader,
+  SideProduct,
 };

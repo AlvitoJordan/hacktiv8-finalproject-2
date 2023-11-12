@@ -41,7 +41,7 @@ const ProtectedRoute = ({ children }) => {
       <Layout>
         <div className="flex items-center space-x-3">
           <div className="animate-spin rounded-full h-10 w-10 border-y-4 border-primary"></div>
-          <span class="text-4xl font-medium text-primary">Loading...</span>
+          <span className="text-4xl font-medium text-primary">Loading...</span>
         </div>
       </Layout>
     );
