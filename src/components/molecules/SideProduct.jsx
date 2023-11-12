@@ -10,7 +10,7 @@ const SideProduct = (props) => {
         alt="image"
         className="min-w-[80px] max-w-[80px] h-[80px] rounded-lg object-contain"
       />
-      <div className="ml-4 w-[160px] lg:w-full ">
+      <div className="ml-4 w-full ">
         <Text type="card-title" text={title} />
         <Text
           className="font-medium text-sm text-secondary mb-2"
