@@ -1,6 +1,5 @@
 import React from "react";
-import Layout from "../components/templates/Layout";
-import MainHome from "../components/organisms/MainHome";
+import { Layout, MainHome } from "../components";
 
 const Homepage = () => {
   return (

@@ -1,6 +1,5 @@
 import React from "react";
-import { Layout } from "../components";
-import MainDisable from "../components/organisms/MainDisable";
+import { Layout, MainDisable } from "../components";
 
 const DisabledPage = () => {
   return (

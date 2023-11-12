@@ -1,6 +1,5 @@
 import React from "react";
-import { Layout } from "../components";
-import MainAdmin from "../components/organisms/MainAdmin";
+import { Layout, MainAdmin } from "../components";
 
 const AdminHomePage = () => {
   return (

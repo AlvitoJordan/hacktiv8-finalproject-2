@@ -1,6 +1,5 @@
 import React from "react";
-import MainRekap from "../components/organisms/MainRekap";
-import { Layout } from "../components";
+import { Layout, MainRekap } from "../components";
 
 const Rekap = () => {
   return (

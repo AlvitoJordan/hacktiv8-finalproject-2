@@ -1,8 +1,7 @@
 import React from "react";
 import { Button, Text } from "../atoms";
+import { NumberInput, SideProduct } from "../molecules";
 import { DeleteIcon, ICWarning } from "../../assets";
-import NumberInput from "./NumberInput";
-import SideProduct from "./SideProduct";
 
 const CartContent = (props) => {
   const {
