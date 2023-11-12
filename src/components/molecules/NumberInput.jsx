@@ -20,7 +20,7 @@ const NumberInput = ({ value, onChange }) => {
   };
 
   return (
-    <div className="flex items-center justify-center space-x-2">
+    <div className="flex items-center justify-center space-x-2 max-[768px]:w-full">
       <Button
         type="OperatorButton"
         onClick={() => handleCalculation("decrement")}
