@@ -18,7 +18,7 @@ const Main404 = () => {
       ></Text>
       <Button
         type="LongPrimaryButtonWithIcon"
-        text="Continue Shopping"
+        text="Back to HomePage"
         icon={<Home />}
         onClick={() => navigate("/")}
       ></Button>
