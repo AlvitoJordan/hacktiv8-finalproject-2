@@ -31,14 +31,20 @@ const MainRekap = () => {
           <div className="col-span-2 border-r-2 border-white py-3 max-[768px]:border-r-[0px] text-left max-[768px]:text-[13px]">
             Products
           </div>
-          <div className="border-x-2 border-white py-3 max-[768px]:border-r-[0px] max-[768px]:text-[13px]">Harga</div>
-          <div className="border-x-2 border-white py-3 max-[768px]:border-r-[0px] max-[768px]:text-[13px]">Terjual</div>
-          <div className="border-l-2 border-white py-3 max-[768px]:border-r-[0px] max-[768px]:text-[13px]">Pendapatan</div>
+          <div className="border-x-2 border-white py-3 max-[768px]:border-r-[0px] max-[768px]:text-[13px]">
+            Harga
+          </div>
+          <div className="border-x-2 border-white py-3 max-[768px]:border-r-[0px] max-[768px]:text-[13px]">
+            Terjual
+          </div>
+          <div className="border-l-2 border-white py-3 max-[768px]:border-r-[0px] max-[768px]:text-[13px]">
+            Pendapatan
+          </div>
         </div>
         <div className=" min-h-[250px] overflow-y-auto no-scrollbar">
           {checkout.map((product) => {
             return (
-              <div className="grid grid-cols-5 font-semibold items-center text-darkgray text-center m-1 px-2 border-2 border-lightgray bg-tablecolor h-auto">
+              <div className="grid grid-cols-5 font-semibold items-center text-darkgray text-center m-1 px-2 py-2 border-2 border-lightgray bg-tablecolor h-auto">
                 <div className="col-span-2 flex text-left items-center h-full border-r-2 max-[768px]:border-r-[1px] border-lightgray">
                   <div className="flex-row">
                     <p className="max-[768px]:text-[15px]">{product.title}</p>
@@ -51,8 +57,9 @@ const MainRekap = () => {
                 <div className="h-full border-x-2 max-[768px]:border-r-[1px] border-lightgray flex items-center justify-center max-[768px]:text-[15px]">
                   {product.quantity}
                 </div>
-                <div className="h-full border-l-2 max-[768px]:border-r-[0px] border-lightgray flex items-center justify-center max-[768px]:text-[15px]">{`$ ${product.price * product.quantity
-                  }`}</div>
+                <div className="h-full border-l-2 max-[768px]:border-r-[0px] border-lightgray flex items-center justify-center max-[768px]:text-[15px]">{`$ ${
+                  product.price * product.quantity
+                }`}</div>
               </div>
             );
           })}
@@ -71,7 +78,7 @@ const MainRekap = () => {
           type="CardOutlineButtonWithIcon"
           onClick={() => navigate("/")}
           icon={<BackIcon />}
-          text="Continue Shopping"
+          text="Back to Dashboard"
         />
       </div>
     </div>
