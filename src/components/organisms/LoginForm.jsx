@@ -77,7 +77,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse lg:flex-row justify-between w-full items-center lg:px-[70px]">
+    <div className="flex flex-col-reverse lg:flex-row justify-between items-center lg:px-[70px] w-full">
       <div>
         <div className="flex flex-col ">
           <Text

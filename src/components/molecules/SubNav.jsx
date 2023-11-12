@@ -9,13 +9,13 @@ const SubNav = () => {
     <>
       <nav className="w-full bg-white font-semibold text-darkgray">
         <ul className="flex space-x-6">
-          <Links to="/" className={`hover:text-secondary  px-4 py-4 ${pathname === "/" && "bg-primary text-white"}`}>
+          <Links to="/" className={`hover:text-secondary  px-4 py-4 max-[768px]:text-[15px] ${pathname === "/" && "bg-primary text-white"}`}>
             All Product
           </Links>
-          <Links to="/availabled" className={`hover:text-secondary  px-4 py-4 ${pathname === "/availabled" && "bg-primary text-white"}`}>
+          <Links to="/availabled" className={`hover:text-secondary  px-4 py-4 max-[768px]:text-[15px] ${pathname === "/availabled" && "bg-primary text-white"}`}>
             Availabled
           </Links>
-          <Links to="/disabled" className={`hover:text-secondary  px-4 py-4 ${pathname === "/disabled" && "bg-primary text-white"}`}>
+          <Links to="/disabled" className={`hover:text-secondary  px-4 py-4 max-[768px]:text-[15px] ${pathname === "/disabled" && "bg-primary text-white"}`}>
             Disabled
           </Links>
         </ul>
