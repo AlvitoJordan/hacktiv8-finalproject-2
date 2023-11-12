@@ -23,19 +23,12 @@ const Mainproducts = () => {
       if (products.length === 0) {
         await dispatch(getAPIAct(`https://fakestoreapi.com/products`));
       }
-
-      console.log("Products loaded:", products);
     };
 
     fetchData();
   }, [dispatch, products]);
 
   const getProductbyId = products.find((item) => String(item.id) === id);
-
-  console.log("Products : ", products);
-  console.log("ID sekarang :", id);
-
-  console.log("Get Product with ID using Find : ", getProductbyId);
 
   const handleCart = () => {
     const user = JSON.parse(localStorage.getItem("userData"));
@@ -116,7 +109,7 @@ const Mainproducts = () => {
             <div className="flex-1 px-4 lg:px-10 py-5 flex items-center justify-center">
               <div className="flex items-center space-x-3">
                 <div className="animate-spin rounded-full h-10 w-10 border-y-4 border-primary"></div>
-                <span class="text-4xl font-medium text-primary">
+                <span className="text-4xl font-medium text-primary">
                   Loading...
                 </span>
               </div>
