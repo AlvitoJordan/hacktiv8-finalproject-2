@@ -1,6 +1,5 @@
 import React from "react";
-import { Layout } from "../components";
-import MainEmptyCart from "../components/organisms/MainEmptyCart";
+import { Layout, MainEmptyCart } from "../components";
 
 const EmptyCartPage = () => {
   return (

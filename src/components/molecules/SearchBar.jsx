@@ -1,6 +1,5 @@
 import { SearchIcon } from "../../assets";
 import { Button, Input } from "../atoms";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

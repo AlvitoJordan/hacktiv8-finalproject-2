@@ -7,6 +7,9 @@ import Rekap from "./Rekap";
 import EmptyCartPage from "./EmptyCartPage";
 import AvailabledPage from "./AvailabledPage";
 import DisabledPage from "./DisabledPage";
+import NotFound404Page from "./NotFound404Page";
+import SearchPage from "./SearchPage";
+
 export {
   CartPage,
   Homepage,
@@ -17,4 +20,6 @@ export {
   EmptyCartPage,
   AvailabledPage,
   DisabledPage,
+  NotFound404Page,
+  SearchPage,
 };

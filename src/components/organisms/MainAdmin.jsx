@@ -1,8 +1,5 @@
 import React from "react";
-import SubNav from "../molecules/SubNav";
-import SubNavHeader from "../molecules/SubNavHeader";
-import SubNavContent from "../molecules/SubNavContent";
-import { Header } from "../molecules";
+import { Header, SubNav, SubNavHeader, SubNavContent } from "../molecules";
 
 const MainAdmin = () => {
   return (

@@ -16,16 +16,6 @@ export const getAPIAct = createAsyncThunk("get/api", async (url) => {
   }
 });
 
-export const getAPIActById = createAsyncThunk("get/apiById", async (url) => {
-  try {
-    const response = await axios.get(url);
-    const modifiedData = { ...response.data, stock: 20, status: "active" };
-    return modifiedData;
-  } catch (error) {
-    console.log(error);
-  }
-});
-
 export const changeStatusProduct = createAsyncThunk(
   "change/status",
   async ({ id, products }) => {
@@ -76,9 +66,6 @@ export const fetchAPISlice = createSlice({
         state.products = action.payload;
       })
       .addCase(changeStatusProduct.fulfilled, (state, action) => {
-        state.products = action.payload;
-      })
-      .addCase(getAPIActById.fulfilled, (state, action) => {
         state.products = action.payload;
       })
       .addCase(updateProduct.fulfilled, (state, action) => {
