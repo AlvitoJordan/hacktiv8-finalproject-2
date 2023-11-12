@@ -30,6 +30,7 @@ const Mainproducts = () => {
 
   const getProductbyId = products.find((item) => String(item.id) === id);
 
+
   const handleCart = () => {
     const user = JSON.parse(localStorage.getItem("userData"));
     const productToCart = { ...getProductbyId, quantity: inputNumber };
@@ -86,12 +87,14 @@ const Mainproducts = () => {
                   className="text-base font-medium my-4 text-grayCS"
                   text={getProductbyId.description}
                 />
+
                 <div className="flex flex-row gap-3 lg:gap-5 items-center mt-5 mb-2">
                   <NumberInput
                     value={inputNumber}
                     onChange={(val) => setInputNumber(val)}
                   />
                   <Text
+
                     className="text-darkgray font-semibold"
                     text={`Stock : ${getProductbyId.stock}`}
                   />

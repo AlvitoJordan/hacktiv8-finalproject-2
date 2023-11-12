@@ -51,7 +51,7 @@ const MainHome = () => {
   }, [dispatch, products]);
 
   return (
-    <div>
+    <div className="w-full">
       {role === "admin" && token ? (
         <MainAdmin />
       ) : (

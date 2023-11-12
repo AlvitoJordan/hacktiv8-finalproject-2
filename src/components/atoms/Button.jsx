@@ -63,7 +63,7 @@ const Button = (props) => {
       return (
         <button
           onClick={onClick}
-          className={`px-4 py-2 rounded-md flex space-x-3 justify-center items-center bg-white border-primary border-2 text-primary font-semibold hover:bg-secondary hover:text-white hover:border-transparent`}
+          className={`max-[768px]:px-2 px-4 py-2 rounded-md flex space-x-3 justify-center items-center bg-white border-primary border-2 text-primary font-semibold hover:bg-secondary hover:text-white hover:border-transparent`}
         >
           {icon}
           <p>{text}</p>

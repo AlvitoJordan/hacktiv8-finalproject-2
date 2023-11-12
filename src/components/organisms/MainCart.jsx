@@ -111,7 +111,7 @@ const MainCart = () => {
 
       {cart.length > 0 ? (
         <>
-          <div className="flex space-x-4 justify-end items-center my-10 ">
+          <div className="flex space-x-4 justify-end items-center my-10">
             <Text className="font-semibold text-3xl" text="Total =" />
             <Text
               type="dolar"

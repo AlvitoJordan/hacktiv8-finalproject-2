@@ -70,7 +70,8 @@ const SubNavContent = () => {
         <>
           {currentPageData.map((item) => (
             <div
-              className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center justify-center p-5 border-lightgray border-b-2 max-[768px]:relative max-[768px]:flex max-[768px]:flex-col max-[768px]:items-start"
+              className="grid grid-cols-[2fr_1fr_2fr_2fr] items-center justify-center p-5 border-lightgray border-b-2  max-[768px]:relative max-[768px]:flex max-[768px]:flex-col max-[768px]:items-start"
+
               key={item.id}
             >
               <SideProduct
